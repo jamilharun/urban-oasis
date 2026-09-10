@@ -17,7 +17,7 @@ export default function History() {
               />
             </div>
           </div>
-          <div className="w-full lg:w-1/2 space-y-8">
+          <div className="reveal w-full lg:w-1/2 space-y-8">
             <div>
               <p className="text-condo-accent uppercase tracking-[0.2em] mb-2 text-sm font-semibold">The Vision</p>
               <h2 className="text-display-sm md:text-display-md font-display font-light">A New Era of <br/>Hospitality</h2>

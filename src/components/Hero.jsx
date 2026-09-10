@@ -17,7 +17,7 @@ export default function Hero() {
           src="/images/hero"
           alt="The Urban Oasis tower at dusk"
           loading="eager"
-          className="w-full h-full object-cover object-center animate-fade-in-up"
+          className="hero-plate w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-condo-dark/80 via-condo-dark/40 to-condo-dark"></div>
       </div>

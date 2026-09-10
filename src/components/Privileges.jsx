@@ -19,7 +19,7 @@ export default function Privileges() {
       className="section-bloom relative overflow-hidden py-32 text-white border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div className="reveal mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
           <div className="max-w-measure">
             <p className="text-condo-accent eyebrow mb-4">
               The privileges
@@ -39,9 +39,9 @@ export default function Privileges() {
           </Link>
         </div>
 
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <ul className="reveal-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {privilegesByFloor.map((p) => (
-            <li key={p.id} className="group relative rounded-card overflow-hidden border border-white/10">
+            <li key={p.id} className="reveal group relative rounded-card overflow-hidden border border-white/10">
               <div className="aspect-[4/5]">
                 <Plate
                   src={p.image}

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 // Absolute, route-prefixed targets: bare hashes were inert on /suite/:id,
@@ -13,9 +13,16 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  // Only the home route has a hero to sit over. Everywhere else the bar keeps
+  // its ground from the first pixel.
+  const overHero = useLocation().pathname === '/';
 
   return (
-    <nav className="fixed w-full z-50 bg-condo-dark/70 backdrop-blur-md border-b border-white/10">
+    <nav
+      className={`fixed w-full z-50 bg-condo-dark/70 backdrop-blur-md border-b border-white/10 ${
+        overHero ? 'nav-over-hero' : ''
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="text-2xl font-display font-bold tracking-widest uppercase text-white">

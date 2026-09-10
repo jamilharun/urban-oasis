@@ -107,7 +107,7 @@ export default function SuiteDetails() {
             {suite.rooms.map((room, i) => (
               <article
                 key={room.name}
-                className={`flex flex-col lg:flex-row gap-10 items-center ${
+                className={`reveal flex flex-col lg:flex-row gap-10 items-center ${
                   i % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}
               >
@@ -207,11 +207,11 @@ export default function SuiteDetails() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="reveal-group grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {suite.reviews.map((review) => (
                 <blockquote
                   key={review.name}
-                  className="rounded-card border border-white/10 bg-white/5 p-7 flex flex-col"
+                  className="reveal rounded-card border border-white/10 bg-white/5 p-7 flex flex-col"
                 >
                   <div className="flex gap-1 mb-5" aria-label={`${review.rating} out of 5`}>
                     {[0, 1, 2, 3, 4].map((i) => (

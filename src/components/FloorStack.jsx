@@ -23,7 +23,7 @@ export default function FloorStack() {
   return (
     <section id="building" className="section-bloom relative overflow-hidden py-28 text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 max-w-measure">
+        <div className="reveal mb-12 max-w-measure">
           <p className="text-condo-accent eyebrow mb-4">
             One address
           </p>
@@ -90,7 +90,7 @@ export default function FloorStack() {
                 key={active.image}
                 src={active.image}
                 alt={active.label}
-                className="w-full h-72 md:h-96 object-cover animate-fade-in-up"
+                className="plate-drift w-full h-72 md:h-96 object-cover"
               />
               <div className="p-7 space-y-4">
                 <div>

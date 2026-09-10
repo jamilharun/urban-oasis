@@ -20,7 +20,7 @@ export default function AvailableSuites() {
       <div className="section-rule absolute top-0 left-0 w-full"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div className="reveal mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
           <div className="max-w-measure">
             <p className="text-condo-accent eyebrow mb-4">Step one</p>
             <h2 className="text-display-sm md:text-display-md font-display font-light mb-4">Pick your suite</h2>
@@ -39,7 +39,7 @@ export default function AvailableSuites() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="reveal-group grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {results.map(({ suite, status }) => {
             const StatusIcon = STATUS_ICON[status.code];
             const stayTotal = suite.price * nights;
@@ -47,7 +47,7 @@ export default function AvailableSuites() {
             return (
               <article
                 key={suite.id}
-                className={`group rounded-card overflow-hidden flex flex-col border transition-colors ${
+                className={`reveal group rounded-card overflow-hidden flex flex-col border transition-colors ${
                   status.ok
                     ? 'border-white/10 bg-white/5 hover:bg-white/10'
                     : 'border-white/5 bg-white/[0.02]'

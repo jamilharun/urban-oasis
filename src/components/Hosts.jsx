@@ -6,7 +6,7 @@ export default function Hosts() {
     <section id="hosts" className="relative py-32 text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12">
-          <div className="lg:w-1/3">
+          <div className="reveal lg:w-1/3">
             <p className="text-condo-accent eyebrow mb-4">
               Resident-hosted
             </p>
@@ -20,7 +20,7 @@ export default function Hosts() {
             </p>
           </div>
 
-          <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="reveal-group lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
             {Object.values(hosts).map((host) => (
               <HostCard key={host.name} host={host} variant="full" />
             ))}
