@@ -21,7 +21,7 @@ export default function Reserve() {
 
   if (!suite) {
     return (
-      <main id="main" className="pt-32 pb-24 min-h-screen text-white">
+      <main id="main" className="pt-28 pb-24 text-white">
         <div className="max-w-2xl mx-auto px-4 text-center">
           <h1 className="text-3xl font-display font-light mb-4">No such suite</h1>
           <Link
@@ -50,8 +50,8 @@ export default function Reserve() {
     setPrivilegeIds((prev) => (prev.includes(pid) ? prev.filter((x) => x !== pid) : [...prev, pid]));
 
   return (
-    <main id="main" className="pb-24 pt-28 min-h-screen text-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main id="main" className="pb-24 pt-28 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           to={`/suite/${suite.id}`}
           className="inline-flex items-center gap-2 text-condo-accent hover:text-white transition-colors mb-8 text-sm uppercase tracking-widest"

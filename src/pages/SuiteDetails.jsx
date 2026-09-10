@@ -11,7 +11,7 @@ export default function SuiteDetails() {
 
   if (!suite) {
     return (
-      <main id="main" className="pt-32 pb-24 min-h-screen text-white">
+      <main id="main" className="pt-28 pb-24 text-white">
         <div className="max-w-2xl mx-auto px-4 text-center">
           <h1 className="text-3xl font-display font-light mb-4">No such suite</h1>
           <p className="text-gray-400 font-light mb-8">
