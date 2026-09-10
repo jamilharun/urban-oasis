@@ -238,3 +238,44 @@ input[type="date"] {
     }
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Hover on a plate. Zooming a photograph on hover is a cheap tell — the image
+   softens, the crop shifts, and nothing about it says considered. A small
+   brightness lift with the frame warming to brass reads as the light coming
+   up in the room instead.
+--------------------------------------------------------------------------- */
+
+.plate-hover {
+  transition: filter 500ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.group:hover .plate-hover {
+  filter: brightness(1.06) saturate(1.04);
+}
+
+/* The frame, not the photo, is what moves. */
+.frame-warm {
+  transition: border-color 400ms ease, box-shadow 400ms ease;
+}
+
+.group:hover .frame-warm,
+.frame-warm:hover {
+  border-color: rgb(192 160 98 / 0.45);
+  box-shadow: 0 0 0 1px rgb(192 160 98 / 0.12);
+}
+
+/* ---------------------------------------------------------------------------
+   Route change. A 200ms settle so pages arrive rather than cut.
+--------------------------------------------------------------------------- */
+
+@keyframes route-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .route-fade {
+    animation: route-in 220ms cubic-bezier(0.33, 1, 0.68, 1) both;
+  }
+}

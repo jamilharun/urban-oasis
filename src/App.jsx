@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { BookingProvider } from './context/BookingContext';
 import Navbar from './components/Navbar';
 import ScrollManager from './components/ScrollManager';
@@ -24,15 +24,30 @@ function App() {
             Skip to main content
           </a>
           <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/suite/:id" element={<SuiteDetails />} />
-            <Route path="/suite/:id/reserve" element={<Reserve />} />
-          </Routes>
+          <RoutedPages />
           <Footer />
         </div>
       </BrowserRouter>
     </BookingProvider>
+  );
+}
+
+/**
+ * Keyed on pathname so each page animates in. Remounting also clears any
+ * page-local state, which is correct here — a reservation's privileges belong
+ * to the suite you were on, not the next one. The hash is deliberately not
+ * part of the key, so in-page anchors don't retrigger the fade.
+ */
+function RoutedPages() {
+  const { pathname } = useLocation();
+  return (
+    <div key={pathname} className="route-fade">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/suite/:id" element={<SuiteDetails />} />
+        <Route path="/suite/:id/reserve" element={<Reserve />} />
+      </Routes>
+    </div>
   );
 }
 

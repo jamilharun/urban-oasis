@@ -41,12 +41,12 @@ export default function Privileges() {
 
         <ul className="reveal-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {privilegesByFloor.map((p) => (
-            <li key={p.id} className="reveal group relative rounded-card overflow-hidden border border-white/10">
+            <li key={p.id} className="reveal frame-warm group relative rounded-card overflow-hidden border border-white/10">
               <div className="aspect-[4/5]">
                 <Plate
                   src={p.image}
                   alt={p.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="plate-hover w-full h-full object-cover"
                 />
               </div>
 

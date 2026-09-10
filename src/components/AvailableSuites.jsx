@@ -49,7 +49,7 @@ export default function AvailableSuites() {
                 key={suite.id}
                 className={`reveal group rounded-card overflow-hidden flex flex-col border transition-colors ${
                   status.ok
-                    ? 'border-white/10 bg-white/5 hover:bg-white/10'
+                    ? 'frame-warm border-white/10 bg-white/5 hover:bg-white/10'
                     : 'border-white/5 bg-white/[0.02]'
                 }`}
               >
@@ -57,8 +57,8 @@ export default function AvailableSuites() {
                   <Plate
                     src={suite.image}
                     alt={suite.name}
-                    className={`w-full h-full object-cover transition-transform duration-700 ${
-                      status.ok ? 'group-hover:scale-105' : 'grayscale opacity-40'
+                    className={`plate-hover w-full h-full object-cover ${
+                      status.ok ? '' : 'grayscale opacity-40'
                     }`}
                   />
                   <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 text-xs tracking-widest uppercase text-gray-200">
