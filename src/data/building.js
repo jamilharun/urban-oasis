@@ -435,10 +435,13 @@ export const privileges = [
     id: 'concierge',
     name: '24/7 Concierge',
     floor: 1,
+    floorLabel: 'G',
     access: 'included',
     hours: 'Always on',
     capacity: 'Desk in the lobby, or message from anywhere',
-    image: '/images/founder.png',
+    // The arrival, not founder.png — that portrait is the architect, and using
+    // the same face for the concierge read as a different person each time.
+    image: '/images/hero.png',
     tagline: 'The service layer a rental can’t have',
     description:
       'Cars, reservations, groceries pre-stocked before you arrive, a late checkout arranged while you sleep. One thread, answered by a human on site.',
@@ -631,3 +634,6 @@ export function reviewSummary(suite) {
   const total = list.reduce((sum, r) => sum + r.rating, 0);
   return { count: list.length, average: Math.round((total / list.length) * 10) / 10 };
 }
+
+/** All privileges, ordered top of the building down — echoes the floor stack. */
+export const privilegesByFloor = [...privileges].sort((a, b) => b.floor - a.floor);

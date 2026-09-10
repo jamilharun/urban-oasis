@@ -259,7 +259,7 @@ export default function SuiteDetails() {
               ))}
             </ul>
             <p className="text-sm text-gray-500 font-light mt-5">
-              The spa, the chef’s table and the sky lounge are attached when you reserve.
+              The spa, the chef’s table and the sky lounge attach at the next step.
             </p>
           </div>
 
