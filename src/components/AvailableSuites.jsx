@@ -13,8 +13,8 @@ export default function AvailableSuites() {
   const { results, nights, checkIn, checkOut, guests, suiteId, selectSuite, availableCount } = useBooking();
 
   return (
-    <section id="suites" className="py-24 bg-condo-dark text-white relative">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+    <section id="suites" className="py-24 text-white relative">
+      <div className="section-rule absolute top-0 left-0 w-full"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">

@@ -3,7 +3,7 @@ import HostCard from './HostCard';
 
 export default function Hosts() {
   return (
-    <section id="hosts" className="py-24 bg-condo-dark text-white border-t border-white/5">
+    <section id="hosts" className="relative py-24 text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-1/3">

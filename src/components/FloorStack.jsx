@@ -20,7 +20,7 @@ export default function FloorStack() {
   const linkedSuites = (active.suiteIds ?? []).map((id) => suites.find((s) => s.id === id));
 
   return (
-    <section id="building" className="py-24 bg-condo-dark text-white border-t border-white/5">
+    <section id="building" className="section-bloom relative overflow-hidden py-24 text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-xl">
           <p className="text-condo-accent uppercase tracking-[0.2em] text-sm font-semibold mb-4">
