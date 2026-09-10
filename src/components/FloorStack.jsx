@@ -21,13 +21,13 @@ export default function FloorStack() {
   const linkedSuites = (active.suiteIds ?? []).map((id) => suites.find((s) => s.id === id));
 
   return (
-    <section id="building" className="section-bloom relative overflow-hidden py-24 text-white border-t border-white/5">
+    <section id="building" className="section-bloom relative overflow-hidden py-28 text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 max-w-xl">
-          <p className="text-condo-accent uppercase tracking-[0.2em] text-sm font-semibold mb-4">
+        <div className="mb-12 max-w-measure">
+          <p className="text-condo-accent eyebrow mb-4">
             One address
           </p>
-          <h2 className="text-4xl md:text-5xl font-display font-light mb-4">
+          <h2 className="text-display-sm md:text-display-md font-display font-light mb-4">
             Everything is a lift ride
           </h2>
           <p className="text-gray-400 font-light">
@@ -121,7 +121,7 @@ export default function FloorStack() {
                         key={s.id}
                         className="text-xs text-gray-300 border border-white/15 rounded-full px-3 py-1"
                       >
-                        {s.name} · ${s.price}/night
+                        {s.name} · <span className="nums">${s.price}</span>/night
                       </li>
                     ))}
                   </ul>

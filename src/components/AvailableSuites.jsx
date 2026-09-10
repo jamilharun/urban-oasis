@@ -16,14 +16,14 @@ export default function AvailableSuites() {
   const { results, nights, checkIn, checkOut, guests, availableCount } = useBooking();
 
   return (
-    <section id="suites" className="py-24 text-white relative">
+    <section id="suites" className="pt-24 pb-32 text-white relative">
       <div className="section-rule absolute top-0 left-0 w-full"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-          <div className="max-w-xl">
-            <p className="text-condo-accent uppercase tracking-[0.2em] text-sm font-semibold mb-4">Step one</p>
-            <h2 className="text-4xl md:text-5xl font-display font-light mb-4">Pick your suite</h2>
+          <div className="max-w-measure">
+            <p className="text-condo-accent eyebrow mb-4">Step one</p>
+            <h2 className="text-display-sm md:text-display-md font-display font-light mb-4">Pick your suite</h2>
             <p className="text-gray-400 font-light">
               Six suites, each hosted by someone who lives in the building. Pick one, then attach
               the privileges you want — the stay is assembled, not listed.
@@ -66,7 +66,7 @@ export default function AvailableSuites() {
                   </div>
                   {status.ok ? (
                     <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 shadow-lg">
-                      <span className="font-semibold text-white">{currency(suite.price)}</span>
+                      <span className="nums font-semibold text-white">{currency(suite.price)}</span>
                       <span className="text-gray-300 text-xs font-light"> / night</span>
                     </div>
                   ) : (
@@ -89,7 +89,7 @@ export default function AvailableSuites() {
                     <span className="text-sm text-gray-400">
                       {nights} {nights === 1 ? 'night' : 'nights'} · sleeps {suite.sleeps}
                     </span>
-                    <span className="text-lg text-white font-medium">
+                    <span className="nums text-lg text-white font-medium">
                       {status.ok ? currency(stayTotal) : '—'}
                     </span>
                   </div>

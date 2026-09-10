@@ -3,7 +3,7 @@ export default function Amenities() {
     <section id="amenities" className="py-24 bg-condo-dark text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center max-w-2xl mx-auto">
-          <p className="text-condo-accent uppercase tracking-[0.2em] text-sm font-semibold mb-4">Exclusive Access</p>
+          <p className="text-condo-accent eyebrow mb-4">Exclusive Access</p>
           <h2 className="text-4xl md:text-5xl font-display font-light mb-6">Guest Privileges</h2>
           <p className="text-gray-400 font-light">As a guest of Urban Oasis, you enjoy full access to the building's private 5-star amenities, elevating your stay beyond a standard hotel experience.</p>
         </div>

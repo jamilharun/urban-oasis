@@ -91,7 +91,34 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-display tracking-tight;
+  @apply font-display;
+  /* Keeps headlines off a one-word last line. The display sizes carry their
+     own letter-spacing, so no blanket tracking here. */
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+@layer components {
+  /* Was repeated ten times with two different tracking values. */
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.22em];
+  }
+}
+
+/* Figures in a stacked column must not change width between rows. Inter has
+   real tabular figures; the display face is for display, not for data. */
+.nums {
+  @apply font-sans;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Lets the opening quote hang outside the measure so the text edge stays
+   straight. Safari honours it; everywhere else is unaffected. */
+blockquote p {
+  hanging-punctuation: first;
 }
 
 /* Sections are anchor targets and the navbar is fixed at h-20. */

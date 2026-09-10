@@ -16,15 +16,15 @@ export default function Privileges() {
   return (
     <section
       id="privileges"
-      className="section-bloom relative overflow-hidden py-24 text-white border-t border-white/5"
+      className="section-bloom relative overflow-hidden py-32 text-white border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-          <div className="max-w-xl">
-            <p className="text-condo-accent uppercase tracking-[0.2em] text-sm font-semibold mb-4">
+          <div className="max-w-measure">
+            <p className="text-condo-accent eyebrow mb-4">
               The privileges
             </p>
-            <h2 className="text-4xl md:text-5xl font-display font-light mb-4">Six floors of it</h2>
+            <h2 className="text-display-sm md:text-display-md font-display font-light mb-4">Six floors of it</h2>
             <p className="text-gray-400 font-light">
               Three come with any suite. Three you attach when you reserve one. None of them are a
               day pass, a resort fee, or a phone number in another city.

@@ -26,14 +26,14 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-condo-light text-condo-dark relative overflow-hidden">
+    <section className="py-28 bg-condo-light text-condo-dark relative overflow-hidden">
       {/* Decorative dot pattern */}
       <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#0f172a 2px, transparent 2px)', backgroundSize: '30px 30px' }}></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 max-w-2xl mx-auto">
-          <p className="text-condo-ink uppercase tracking-[0.2em] text-sm font-semibold mb-4">Word of Mouth</p>
-          <h2 className="text-4xl md:text-5xl font-display font-light mb-6">Guest Experiences</h2>
+        <div className="text-center mb-16 max-w-measure mx-auto">
+          <p className="text-condo-ink eyebrow mb-4">Word of Mouth</p>
+          <h2 className="text-display-sm md:text-display-md font-display font-light mb-6">Guest Experiences</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

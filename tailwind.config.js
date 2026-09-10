@@ -17,6 +17,24 @@ export default {
         sans: ['Inter', 'sans-serif'],
         display: ['Outfit', 'sans-serif'],
       },
+      // Display scale with optical tracking baked in: the larger the size, the
+      // tighter it needs to be set. A 100px headline at the same tracking as a
+      // 40px one looks loose, which is the commonest way big type reads cheap.
+      fontSize: {
+        'display-xs': ['1.875rem', { lineHeight: '1.15', letterSpacing: '-0.015em' }],
+        'display-sm': ['2.75rem',  { lineHeight: '1.05', letterSpacing: '-0.02em' }],
+        'display-md': ['3.75rem',  { lineHeight: '1.0',  letterSpacing: '-0.025em' }],
+        'display-lg': ['4.75rem',  { lineHeight: '0.98', letterSpacing: '-0.03em' }],
+        'display-xl': ['6.5rem',   { lineHeight: '1.02', letterSpacing: '-0.035em' }],
+      },
+      maxWidth: {
+        // Body copy wants 60–70 characters. Note `ch` is the width of the zero
+        // glyph (~0.6em in Inter), not the average character advance (~0.5em),
+        // so these are ~20% larger than the character count they produce:
+        // 54ch measures out to roughly 68 characters, which is the target.
+        measure: '54ch',
+        'measure-wide': '62ch',
+      },
       borderRadius: {
         // Two radii, used everywhere. Was five.
         card: '0.75rem',

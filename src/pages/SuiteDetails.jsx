@@ -50,10 +50,10 @@ export default function SuiteDetails() {
         {/* ---- Title ---------------------------------------------------- */}
         <header className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div>
-            <p className="text-condo-accent text-sm tracking-widest uppercase mb-3">
+            <p className="text-condo-accent eyebrow mb-3">
               Floor {suite.floor} · {suite.type}
             </p>
-            <h1 className="text-4xl md:text-6xl font-display font-light">{suite.name}</h1>
+            <h1 className="text-display-sm md:text-display-lg font-display font-light">{suite.name}</h1>
             {count > 0 && (
               <p className="flex items-center gap-2 mt-4 text-sm text-gray-300">
                 <Star className="w-4 h-4 fill-condo-accent text-condo-accent" />
@@ -67,7 +67,7 @@ export default function SuiteDetails() {
           </div>
 
           <div className="shrink-0 lg:text-right">
-            <p className="text-3xl font-display text-white">
+            <p className="nums text-3xl text-white">
               {currency(suite.price)}
               <span className="text-sm text-gray-400 font-sans"> / night</span>
             </p>

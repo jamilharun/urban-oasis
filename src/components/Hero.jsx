@@ -24,13 +24,13 @@ export default function Hero() {
 
       <div className="relative z-10 w-full px-4 max-w-5xl mx-auto mt-20">
         <div className="text-center mb-12">
-          <p className="text-condo-accent uppercase tracking-[0.3em] mb-4 text-sm font-semibold animate-fade-in-up">
+          <p className="text-condo-accent eyebrow mb-4 animate-fade-in-up">
             One building · Thirty-two floors
           </p>
-          <h1 className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight animate-fade-in-up animate-delay-100">
+          <h1 className="text-display-sm md:text-display-xl font-light text-white mb-8 md:mb-10 animate-fade-in-up animate-delay-100">
             Book the building,<br /> not just the room
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light animate-fade-in-up animate-delay-200">
+          <p className="text-lg md:text-xl text-gray-300 max-w-measure mx-auto font-light animate-fade-in-up animate-delay-200">
             Resident-hosted suites with the spa, the pool, the chef and a 24/7 concierge
             attached to your stay — not sold back to you as extras.
           </p>

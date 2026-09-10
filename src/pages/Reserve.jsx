@@ -61,8 +61,8 @@ export default function Reserve() {
         </Link>
 
         <header className="mb-12">
-          <p className="text-condo-accent text-sm tracking-widest uppercase mb-3">Reserve</p>
-          <h1 className="text-4xl md:text-5xl font-display font-light">{suite.name}</h1>
+          <p className="text-condo-accent eyebrow mb-3">Reserve</p>
+          <h1 className="text-display-sm md:text-display-md font-display font-light">{suite.name}</h1>
           <p className="text-gray-400 font-light mt-3">
             Floor {suite.floor} · {suite.type} · hosted by {suite.host.name}
           </p>
@@ -234,10 +234,10 @@ export default function Reserve() {
 
               <ul className="space-y-3 border-t border-white/10 pt-5 text-sm">
                 <li className="flex justify-between gap-3 text-gray-300">
-                  <span>
+                  <span className="nums">
                     {currency(suite.price)} × {nights} {nights === 1 ? 'night' : 'nights'}
                   </span>
-                  <span className="text-white">{currency(roomTotal)}</span>
+                  <span className="nums text-white">{currency(roomTotal)}</span>
                 </li>
                 {chosen.map((p) => (
                   <li key={p.id} className="flex justify-between gap-3 text-gray-300">
@@ -245,7 +245,7 @@ export default function Reserve() {
                       <Sparkles className="w-3.5 h-3.5 text-condo-accent shrink-0" />
                       <span className="truncate">{p.name}</span>
                     </span>
-                    <span className="text-white shrink-0">{p.price ? currency(p.price) : '—'}</span>
+                    <span className="nums text-white shrink-0">{p.price ? currency(p.price) : '—'}</span>
                   </li>
                 ))}
                 {standingPrivileges.length > 0 && (
@@ -258,10 +258,10 @@ export default function Reserve() {
 
               <div className="flex justify-between items-baseline mt-5 pt-5 border-t border-white/10">
                 <span className="text-white font-medium">Total</span>
-                <span className="text-2xl text-white font-display">{currency(grandTotal)}</span>
+                <span className="nums text-2xl text-white">{currency(grandTotal)}</span>
               </div>
               {privilegeTotal > 0 && (
-                <p className="text-xs text-gray-400 mt-2">
+                <p className="nums text-xs text-gray-400 mt-2">
                   {currency(roomTotal)} suite + {currency(privilegeTotal)} privileges
                 </p>
               )}
