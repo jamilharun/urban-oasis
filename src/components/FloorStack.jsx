@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ArrowDown } from 'lucide-react';
 import { floorStack, privileges, suites } from '../data/building';
+import Plate from './Plate';
 
 const KIND_LABEL = {
   privilege: 'Guest privilege',
@@ -85,7 +86,7 @@ export default function FloorStack() {
           {/* The floor */}
           <div className="flex-1 min-w-0">
             <div className="rounded-card overflow-hidden border border-white/10 bg-white/5">
-              <img
+              <Plate
                 key={active.image}
                 src={active.image}
                 alt={active.label}

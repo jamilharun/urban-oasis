@@ -4,6 +4,7 @@ import {
 } from 'lucide-react';
 import { suites, currency, standingPrivileges, reviewSummary } from '../data/building';
 import HostCard from '../components/HostCard';
+import Plate from '../components/Plate';
 
 export default function SuiteDetails() {
   const { id } = useParams();
@@ -80,9 +81,10 @@ export default function SuiteDetails() {
         </header>
 
         {/* ---- Lead image ---------------------------------------------- */}
-        <img
+        <Plate
           src={suite.image}
           alt={suite.name}
+          loading="eager"
           className="w-full h-[58vh] min-h-80 object-cover rounded-card border border-white/10 shadow-2xl mb-6"
         />
 
@@ -110,10 +112,9 @@ export default function SuiteDetails() {
                 }`}
               >
                 <div className="w-full lg:w-3/5">
-                  <img
+                  <Plate
                     src={room.image}
                     alt={room.name}
-                    loading="lazy"
                     className="w-full h-80 lg:h-[28rem] object-cover rounded-card border border-white/10"
                   />
                 </div>
@@ -171,11 +172,10 @@ export default function SuiteDetails() {
           <h2 className="text-3xl font-display font-light mb-8">The plan</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {suite.gallery.map((shot) => (
-              <img
+              <Plate
                 key={shot.src}
                 src={shot.src}
                 alt={shot.alt}
-                loading="lazy"
                 className="w-full h-72 object-cover rounded-card border border-white/10"
               />
             ))}

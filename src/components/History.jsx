@@ -1,3 +1,5 @@
+import Plate from './Plate';
+
 export default function History() {
   return (
     <section id="history" className="py-24 text-white border-t border-white/5">
@@ -8,9 +10,9 @@ export default function History() {
                 16px past the column and gave the whole page a horizontal scrollbar. */}
             <div className="relative pr-4 pb-4">
               <div className="absolute top-4 left-4 right-0 bottom-0 border border-condo-accent/30"></div>
-              <img 
-                src="/images/founder.png" 
-                alt="Elias Sterling - Founder" 
+              <Plate
+                src="/images/founder"
+                alt="Elias Sterling, the architect"
                 className="relative w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-1000"
               />
             </div>

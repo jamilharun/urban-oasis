@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useBooking } from '../context/useBooking';
 import { currency, formatDate } from '../data/building';
 import HostCard from './HostCard';
+import Plate from './Plate';
 
 const STATUS_ICON = {
   capacity: Users,
@@ -53,10 +54,9 @@ export default function AvailableSuites() {
                 }`}
               >
                 <div className="relative h-56 overflow-hidden">
-                  <img
+                  <Plate
                     src={suite.image}
                     alt={suite.name}
-                    loading="lazy"
                     className={`w-full h-full object-cover transition-transform duration-700 ${
                       status.ok ? 'group-hover:scale-105' : 'grayscale opacity-40'
                     }`}

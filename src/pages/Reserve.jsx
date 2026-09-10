@@ -8,6 +8,7 @@ import {
 } from '../data/building';
 import { useBooking } from '../context/useBooking';
 import HostCard from '../components/HostCard';
+import Plate from '../components/Plate';
 
 const STATUS_ICON = { capacity: Users, booked: CalendarX2, minstay: Moon };
 
@@ -203,7 +204,7 @@ export default function Reserve() {
           {/* ---- Summary. Opaque: it carries prices. ------------------ */}
           <div className="lg:col-span-1">
             <div className="lg:sticky lg:top-28 rounded-card border border-white/15 bg-condo-panel p-7 shadow-[0_12px_48px_rgba(0,0,0,0.5)]">
-              <img
+              <Plate
                 src={suite.image}
                 alt={suite.name}
                 className="w-full h-32 object-cover rounded-control mb-5"

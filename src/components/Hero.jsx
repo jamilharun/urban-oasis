@@ -1,6 +1,7 @@
 import { Search } from 'lucide-react';
 import { useBooking } from '../context/useBooking';
 import { todayISO } from '../data/building';
+import Plate from './Plate';
 
 export default function Hero() {
   const { checkIn, checkOut, guests, nights, availableCount, setField } = useBooking();
@@ -12,9 +13,10 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img
-          src="/images/hero.png"
+        <Plate
+          src="/images/hero"
           alt="The Urban Oasis tower at dusk"
+          loading="eager"
           className="w-full h-full object-cover object-center animate-fade-in-up"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-condo-dark/80 via-condo-dark/40 to-condo-dark"></div>
