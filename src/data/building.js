@@ -85,6 +85,52 @@ export const suites = [
     sleeps: 6,
     minNights: 3,
     image: '/images/penthouse.png',
+    gallery: [
+      { src: '/images/lounge.png', alt: 'The penthouse entertaining level' },
+      { src: '/images/floorplan.png', alt: 'Floor plan, level 31' },
+    ],
+    specs: {
+      size: '3,180 sq ft',
+      ceiling: '6.2 m at the window wall',
+      baths: '3 — two en suite',
+      aspect: 'North-west · river and skyline',
+    },
+    rooms: [
+      {
+        name: 'The entertaining floor',
+        image: '/images/penthouse.png',
+        copy: 'A single room the depth of the building, opened to a double-height window wall. The dining table and the seating group sit on one plane so nothing blocks the view from the lift landing.',
+        features: ['Double-height bronze-framed glazing', 'Book-matched Calacatta fireplace', 'Seats fourteen at the table'],
+      },
+      {
+        name: 'The upper lounge',
+        image: '/images/lounge.png',
+        copy: 'Up the stair, a smaller and darker room for after dinner — walnut panelling, a stocked bar, and the only west-facing window in the suite.',
+        features: ['Walnut-panelled bar', 'Record library and turntable', 'Private lift landing'],
+      },
+    ],
+    furnishings: [
+      'Minotti Alexander modular sofa in bouclé',
+      'Cassina LC6 dining table, ten places',
+      'Flos Arco floor lamp',
+      'Hand-knotted wool rug, 4 × 6 m',
+      'Bang & Olufsen Beolab 50, pair',
+    ],
+    bath: {
+      copy: 'Three bathrooms, two of them en suite. The principal is a room in its own right, with the bath set against the window.',
+      fittings: [
+        'Freestanding bath cast from Carrara',
+        'Vola brushed-brass tapware',
+        'Steam shower with rain and body jets',
+        'Heated travertine floor',
+        'Double vanity in honed marble',
+      ],
+    },
+    reviews: [
+      { name: 'Adaeze N.', stay: '6 nights in March', rating: 5, text: 'We used the upper lounge every evening and never once went out. The lift opens straight into the suite, which sounds like a small thing until you arrive with luggage.' },
+      { name: 'Henrik & Sofia L.', stay: '4 nights in January', rating: 5, text: 'The window wall is not exaggerated in the photographs. We ate every meal at that table watching the river go dark.' },
+      { name: 'M. Farouk', stay: '3 nights in November', rating: 4, text: 'Faultless service. The stair up to the lounge is steep though — worth knowing if anyone in your party would rather avoid it.' },
+    ],
     host: hosts.sterling,
     blocked: [[offsetDays(2), offsetDays(9)]],
   },
@@ -97,6 +143,51 @@ export const suites = [
     sleeps: 4,
     minNights: 2,
     image: '/images/loft.png',
+    gallery: [
+      { src: '/images/kitchen.png', alt: 'The loft kitchen' },
+      { src: '/images/floorplan.png', alt: 'Floor plan, level 26' },
+    ],
+    specs: {
+      size: '1,640 sq ft',
+      ceiling: '4.8 m to the exposed slab',
+      baths: '2 — one en suite',
+      aspect: 'South-east · harbour',
+    },
+    rooms: [
+      {
+        name: 'The double-height living room',
+        image: '/images/loft.png',
+        copy: 'The original 1998 window frames were kept, blackened and reglazed. Nothing has been added at ceiling height, so the slab and the ductwork are still the ceiling.',
+        features: ['Original blackened-steel glazing', 'Mezzanine study above', 'Exposed slab and services'],
+      },
+      {
+        name: 'The galley kitchen',
+        image: '/images/kitchen.png',
+        copy: 'A working kitchen rather than a display one — full-depth counters down one wall, everything within a pace of the sink.',
+        features: ['Marble counter run, 4.2 m', 'Gaggenau oven and induction', 'Seats four at the counter'],
+      },
+    ],
+    furnishings: [
+      'Vitra Grand Sofa in charcoal',
+      'Reclaimed oak dining table, seats eight',
+      'Carl Hansen CH24 counter stools, four',
+      'Anglepoise Type 75, pair',
+      'Open steel shelving, full height',
+    ],
+    bath: {
+      copy: 'Two bathrooms, both wet rooms. Poured concrete throughout, in keeping with the shell.',
+      fittings: [
+        'Wet room in poured concrete',
+        'Vola matte-black tapware',
+        'Walk-in rain shower',
+        'Wall-hung oak vanity',
+        'Underfloor heating',
+      ],
+    },
+    reviews: [
+      { name: 'Priya R.', stay: '5 nights in April', rating: 5, text: 'The original window frames make the room. Mara left a note and the espresso machine ready, and answered a question about the mezzanine desk within minutes.' },
+      { name: 'Tom B.', stay: '2 nights in February', rating: 4, text: 'Wonderful space. The exposed slab does carry sound, so the mezzanine is not a private study while someone is cooking.' },
+    ],
     host: hosts.mara,
     blocked: [],
   },
@@ -109,6 +200,51 @@ export const suites = [
     sleeps: 4,
     minNights: 2,
     image: '/images/kitchen.png',
+    gallery: [
+      { src: '/images/1bed.png', alt: 'The corner living room' },
+      { src: '/images/floorplan.png', alt: 'Floor plan, level 24' },
+    ],
+    specs: {
+      size: '1,420 sq ft',
+      ceiling: '3.1 m',
+      baths: '2 — one en suite',
+      aspect: 'Dual aspect · east and south',
+    },
+    rooms: [
+      {
+        name: 'The marble kitchen',
+        image: '/images/kitchen.png',
+        copy: 'Calacatta Viola run as a waterfall island and carried up the splashback in one book-matched sheet. The appliance wall is concealed behind dark oak.',
+        features: ['Calacatta Viola waterfall island', 'Full Gaggenau suite', 'Brass Vola pot filler'],
+      },
+      {
+        name: 'The corner living room',
+        image: '/images/1bed.png',
+        copy: 'The corner itself is left empty — the seating pulls back from the glass so the two aspects read as one continuous view.',
+        features: ['Glazing on two elevations', 'Concealed blinds throughout', 'Desk built into the return'],
+      },
+    ],
+    furnishings: [
+      'B&B Italia Charles sofa',
+      'Carl Hansen CH327 dining table, six places',
+      'Gubi Bestlite BL3 pair',
+      'Wool bouclé lounge chairs, pair',
+      'Silk-blend rug, 3 × 4 m',
+    ],
+    bath: {
+      copy: 'Both bathrooms are marble-lined, with the en suite taking the east light.',
+      fittings: [
+        'Marble-lined walls and floor',
+        'Wall-hung Duravit basins, pair',
+        'Frameless glass shower',
+        'Backlit mirror with demist',
+        'Heated towel rail',
+      ],
+    },
+    reviews: [
+      { name: 'Céline D.', stay: '4 nights in May', rating: 5, text: 'I cooked in that kitchen twice and would fly back for it. The corner really is left empty as described, and it works.' },
+      { name: 'J. Okada', stay: '3 nights in September', rating: 5, text: 'Dual aspect means it is bright from breakfast to sunset. Tobias had booked our spa slots before we landed.' },
+    ],
     host: hosts.tobias,
     blocked: [[offsetDays(20), offsetDays(28)]],
   },
@@ -121,6 +257,52 @@ export const suites = [
     sleeps: 2,
     minNights: 1,
     image: '/images/1bed.png',
+    gallery: [
+      { src: '/images/kitchen.png', alt: 'The kitchen' },
+      { src: '/images/floorplan.png', alt: 'Floor plan, level 14' },
+    ],
+    specs: {
+      size: '780 sq ft',
+      ceiling: '2.9 m',
+      baths: '1.5',
+      aspect: 'West · park and city',
+    },
+    rooms: [
+      {
+        name: 'The living room',
+        image: '/images/1bed.png',
+        copy: 'Distinct from the bedroom, which is the whole point of the plan — you can close a door on the day.',
+        features: ['Oak parquet in herringbone', 'Blackout linen curtains', 'Sofa converts for a third guest'],
+      },
+      {
+        name: 'The kitchen',
+        image: '/images/kitchen.png',
+        copy: 'Small, fully equipped, and stocked to your list by the concierge before you arrive.',
+        features: ['Induction hob and combi oven', 'Full-height fridge', 'Breakfast counter for two'],
+      },
+    ],
+    furnishings: [
+      'Muuto Outline two-seat sofa',
+      'Fritz Hansen Series 7 chairs, four',
+      'Oak parquet in herringbone',
+      'Marshall Stanmore III',
+      'Linen bedding, changed midweek',
+    ],
+    bath: {
+      copy: 'One full bathroom plus a cloakroom off the hall.',
+      fittings: [
+        'Full bath with overhead shower',
+        'Terrazzo floor and skirting',
+        'Brushed-nickel tapware',
+        'Mirrored cabinet with charging point',
+        'Heated towel rail',
+      ],
+    },
+    reviews: [
+      { name: 'Rosa M.', stay: '4 nights in June', rating: 5, text: 'Being able to shut the bedroom door is the whole reason I booked this over a studio. Worth the difference.' },
+      { name: 'Daniel A.', stay: '7 nights in August', rating: 5, text: 'The concierge stocked the fridge to my list before arrival. After a long flight that was worth more than any hotel turndown.' },
+      { name: 'Kemi O.', stay: '2 nights in December', rating: 4, text: 'Lovely and quiet. West-facing gets warm in the afternoon — the blinds handle it, but you will want them drawn.' },
+    ],
     host: hosts.tobias,
     blocked: [],
   },
@@ -133,6 +315,51 @@ export const suites = [
     sleeps: 2,
     minNights: 1,
     image: '/images/studio.png',
+    gallery: [
+      { src: '/images/kitchen.png', alt: 'The kitchenette' },
+      { src: '/images/floorplan.png', alt: 'Floor plan, level 9' },
+    ],
+    specs: {
+      size: '505 sq ft',
+      ceiling: '2.9 m',
+      baths: '1',
+      aspect: 'East · park',
+    },
+    rooms: [
+      {
+        name: 'The studio',
+        image: '/images/studio.png',
+        copy: 'One room that changes through the day. The bed folds into the storage wall and is made up by housekeeping each morning, so the room is a living room by nine.',
+        features: ['Wall bed in white oak', 'Full-height storage wall', 'Desk that folds flat'],
+      },
+      {
+        name: 'The kitchenette',
+        image: '/images/kitchen.png',
+        copy: 'Compact but not token — two zones, a real oven, and a dishwasher behind the cabinetry.',
+        features: ['Two-zone induction', 'Concealed dishwasher', 'Fold-away table for four'],
+      },
+    ],
+    furnishings: [
+      'Wall bed in white oak, made up daily',
+      'Hay Mags two-seater',
+      'Fold-away dining table, four places',
+      'Integrated storage wall',
+      'Sonos Era 100',
+    ],
+    bath: {
+      copy: 'A single bathroom, shower only — the trade for the park aspect at this rate.',
+      fittings: [
+        'Walk-in shower, no bath',
+        'Micro-cement walls',
+        'Chrome tapware',
+        'Recessed shelving',
+        'Heated towel rail',
+      ],
+    },
+    reviews: [
+      { name: 'Sven H.', stay: '3 nights in July', rating: 5, text: 'The wall bed is genuinely made up every morning, so the room is a living room by nine. That alone makes the square footage irrelevant.' },
+      { name: 'Ana-Lucía P.', stay: '5 nights in October', rating: 4, text: 'Excellent value for the pool and gym access alone. Shower only, which is stated clearly and did not bother me.' },
+    ],
     host: hosts.ines,
     blocked: [],
   },
@@ -145,6 +372,51 @@ export const suites = [
     sleeps: 3,
     minNights: 2,
     image: '/images/garden.png',
+    gallery: [
+      { src: '/images/studio.png', alt: 'The bedroom' },
+      { src: '/images/floorplan.png', alt: 'Floor plan, level 3' },
+    ],
+    specs: {
+      size: '910 sq ft, plus a 340 sq ft terrace',
+      ceiling: '3.4 m',
+      baths: '1',
+      aspect: 'South · onto the planted podium',
+    },
+    rooms: [
+      {
+        name: 'The terrace room',
+        image: '/images/garden.png',
+        copy: 'The glass wall slides fully open, so in warm weather the room and the terrace are one space. This is the only suite in the building with private outdoor ground.',
+        features: ['Sliding glass wall, 5 m', 'Teak lounge seating for six', 'Outdoor shower on the terrace'],
+      },
+      {
+        name: 'The bedroom',
+        image: '/images/studio.png',
+        copy: 'Set back from the terrace and planted out on two sides, which makes it the quietest bedroom in the building.',
+        features: ['Planting on two elevations', 'Blackout and sheer layers', 'Sleeps a third on the daybed'],
+      },
+    ],
+    furnishings: [
+      'Teak outdoor lounge set, seats six',
+      'Rattan lounge chairs, pair',
+      'Woven jute rug',
+      'Daybed in the bedroom bay',
+      'Outdoor dining table for six',
+    ],
+    bath: {
+      copy: 'One bathroom, with the bath itself looking out onto the planting.',
+      fittings: [
+        'Bath with terrace outlook',
+        'Travertine surround',
+        'Brushed-brass tapware',
+        'Twin rain shower',
+        'Heated stone floor',
+      ],
+    },
+    reviews: [
+      { name: 'The Adeyemi family', stay: '6 nights in April', rating: 5, text: 'Our children were on the terrace from breakfast until dark. Inés met us at the lift and walked them round the planting.' },
+      { name: 'Georg W.', stay: '3 nights in March', rating: 5, text: 'Sliding the whole glass wall back is the moment you understand what you paid for. Quietest room I have slept in inside a city.' },
+    ],
     host: hosts.ines,
     blocked: [],
   },
@@ -350,4 +622,12 @@ export function suiteStatus(suite, { checkIn, checkOut, guests }) {
     return { ok: false, code: 'minstay', label: `${suite.minNights}-night minimum` };
   }
   return { ok: true, code: 'available', label: 'Available' };
+}
+
+/** Average rating and count for a suite's own reviews. */
+export function reviewSummary(suite) {
+  const list = suite.reviews ?? [];
+  if (list.length === 0) return { count: 0, average: null };
+  const total = list.reduce((sum, r) => sum + r.rating, 0);
+  return { count: list.length, average: Math.round((total / list.length) * 10) / 10 };
 }

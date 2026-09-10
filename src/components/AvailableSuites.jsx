@@ -1,4 +1,5 @@
-import { Users, ArrowUpRight, Check, CalendarX2, Moon } from 'lucide-react';
+import { Users, ArrowUpRight, CalendarX2, Moon } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useBooking } from '../context/useBooking';
 import { currency, formatDate } from '../data/building';
 import HostCard from './HostCard';
@@ -10,7 +11,8 @@ const STATUS_ICON = {
 };
 
 export default function AvailableSuites() {
-  const { results, nights, checkIn, checkOut, guests, suiteId, selectSuite, availableCount } = useBooking();
+  const navigate = useNavigate();
+  const { results, nights, checkIn, checkOut, guests, availableCount } = useBooking();
 
   return (
     <section id="suites" className="py-24 text-white relative">
@@ -38,7 +40,6 @@ export default function AvailableSuites() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {results.map(({ suite, status }) => {
-            const selected = suiteId === suite.id;
             const StatusIcon = STATUS_ICON[status.code];
             const stayTotal = suite.price * nights;
 
@@ -46,11 +47,9 @@ export default function AvailableSuites() {
               <article
                 key={suite.id}
                 className={`group rounded-card overflow-hidden flex flex-col border transition-colors ${
-                  selected
-                    ? 'border-condo-accent bg-condo-accent/10'
-                    : status.ok
-                      ? 'border-white/10 bg-white/5 hover:bg-white/10'
-                      : 'border-white/5 bg-white/[0.02]'
+                  status.ok
+                    ? 'border-white/10 bg-white/5 hover:bg-white/10'
+                    : 'border-white/5 bg-white/[0.02]'
                 }`}
               >
                 <div className="relative h-56 overflow-hidden">
@@ -96,24 +95,17 @@ export default function AvailableSuites() {
                   </div>
 
                   <button
-                    onClick={() => selectSuite(suite.id)}
+                    onClick={() => navigate(`/suite/${suite.id}`)}
                     disabled={!status.ok}
-                    aria-pressed={selected}
                     className={`w-full py-3 rounded-control font-semibold tracking-wider uppercase text-sm flex items-center justify-center gap-2 transition-colors ${
-                      selected
-                        ? 'bg-white text-condo-dark'
-                        : status.ok
-                          ? 'bg-condo-accent text-condo-dark hover:bg-[#d4b878]'
-                          : 'bg-white/5 text-gray-500 cursor-not-allowed'
+                      status.ok
+                        ? 'bg-condo-accent text-condo-dark hover:bg-[#d4b878]'
+                        : 'bg-white/5 text-gray-500 cursor-not-allowed'
                     }`}
                   >
-                    {selected ? (
+                    {status.ok ? (
                       <>
-                        <Check className="w-4 h-4" /> In your stay
-                      </>
-                    ) : status.ok ? (
-                      <>
-                        Select suite <ArrowUpRight className="w-4 h-4" />
+                        View Suite Details <ArrowUpRight className="w-4 h-4" />
                       </>
                     ) : (
                       status.label

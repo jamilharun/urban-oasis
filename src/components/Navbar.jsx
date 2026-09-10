@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
+// Absolute, route-prefixed targets: bare hashes were inert on /suite/:id,
+// where none of these ids exist.
 const links = [
-  { href: '#suites', label: 'Suites' },
-  { href: '#privileges', label: 'Privileges' },
-  { href: '#building', label: 'The Building' },
-  { href: '#hosts', label: 'Hosts' },
+  { to: '/#suites', label: 'Suites' },
+  { to: '/#privileges', label: 'Privileges' },
+  { to: '/#building', label: 'The Building' },
+  { to: '/#hosts', label: 'Hosts' },
 ];
 
 export default function Navbar() {
@@ -15,19 +18,19 @@ export default function Navbar() {
     <nav className="fixed w-full z-50 bg-condo-dark/70 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <a href="#home" className="text-2xl font-display font-bold tracking-widest uppercase text-white">
+          <Link to="/" className="text-2xl font-display font-bold tracking-widest uppercase text-white">
             Urban Oasis
-          </a>
+          </Link>
 
           <div className="hidden md:flex space-x-8">
             {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+              <Link
+                key={link.to}
+                to={link.to}
                 className="text-sm uppercase tracking-wider text-gray-300 hover:text-condo-accent transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -50,14 +53,14 @@ export default function Navbar() {
       >
         <ul className="px-4 py-4 space-y-1">
           {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
+            <li key={link.to}>
+              <Link
+                to={link.to}
                 onClick={() => setOpen(false)}
                 className="block px-2 py-3 text-sm uppercase tracking-wider text-gray-300 hover:text-condo-accent transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
