@@ -38,9 +38,9 @@ export default function Suites() {
     <main id="main" className="scroll-mt-24 pb-24 pt-28 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-10 max-w-measure">
-          <p className="text-condo-accent eyebrow mb-4">Every suite</p>
+          <p className="text-condo-accent eyebrow mb-4">The building</p>
           <h1 className="text-balance text-display-sm md:text-display-lg font-display font-light mb-5">
-            All six suites
+            Every suite
           </h1>
           <p className="text-pretty text-gray-400 font-light">
             The whole building, {currency(cheapest)} to {currency(dearest)} a night. Change your
@@ -119,7 +119,7 @@ export default function Suites() {
                 onClick={() => setAvailableOnly(false)}
                 className="eyebrow text-condo-accent hover:text-white transition-colors"
               >
-                Show all six anyway →
+                Show them all anyway →
               </button>
             )}
           </div>

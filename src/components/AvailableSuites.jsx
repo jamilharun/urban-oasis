@@ -40,7 +40,7 @@ export default function AvailableSuites() {
               to="/suites"
               className="inline-flex items-center gap-2 bg-condo-accent text-condo-dark px-6 py-3 rounded-control font-semibold tracking-widest uppercase text-sm hover:bg-[#d4b878] transition-colors"
             >
-              See all six suites <ArrowRight className="w-4 h-4" />
+              See all suites <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

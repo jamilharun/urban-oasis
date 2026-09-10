@@ -14,7 +14,7 @@ export default function SuiteNotFound({ id }) {
           to="/suites"
           className="inline-flex items-center gap-2 eyebrow text-condo-accent hover:text-white transition-colors"
         >
-          <ArrowLeft className="w-4 h-4" /> Back to all six suites
+          <ArrowLeft className="w-4 h-4" /> Back to all suites
         </Link>
       </div>
     </main>

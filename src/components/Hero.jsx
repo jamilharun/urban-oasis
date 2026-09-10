@@ -4,7 +4,7 @@ import { todayISO } from '../lib/format';
 import Plate from './Plate';
 
 export default function Hero() {
-  const { checkIn, checkOut, guests, nights, availableCount, setField } = useBooking();
+  const { checkIn, checkOut, guests, nights, results, availableCount, setField } = useBooking();
 
   const goToSuites = () => {
     document.getElementById('suites')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -90,7 +90,7 @@ export default function Hero() {
         <p data-intro className="text-center text-sm text-gray-400 mt-6 font-light">
           {nights > 0 ? (
             <>
-              <span className="text-white font-medium">{availableCount}</span> of 6 suites free for{' '}
+              <span className="text-white font-medium">{availableCount}</span> of {results.length} suites free for{' '}
               <span className="text-white font-medium">{nights} {nights === 1 ? 'night' : 'nights'}</span>
               {' · '}every one includes the pool, the gym and the concierge
             </>

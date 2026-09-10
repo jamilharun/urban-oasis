@@ -4,7 +4,7 @@ import { privilegesByFloor } from '../data/building';
 import Plate from './Plate';
 
 /**
- * Atmospheric on the home page: six tiles, names and floors, nothing else.
+ * Atmospheric on the home page: tiles, names and floors, nothing else.
  *
  * This section used to repeat every field — description, hours, capacity,
  * price — that the reserve page's step 2 and the suite showcase already carry.
@@ -24,7 +24,9 @@ export default function Privileges() {
             <p className="text-condo-accent eyebrow mb-4">
               The privileges
             </p>
-            <h2 className="text-balance text-display-sm md:text-display-md font-display font-light mb-4">Six floors of it</h2>
+            <h2 className="text-balance text-display-sm md:text-display-md font-display font-light mb-4">
+              Four floors and the lobby
+            </h2>
             <p className="text-pretty text-gray-400 font-light">
               Three come with any suite. Three you attach when you reserve one. None of them are a
               day pass, a resort fee, or a phone number in another city.
