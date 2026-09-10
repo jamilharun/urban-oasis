@@ -2,14 +2,13 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { BookingProvider } from './context/BookingProvider';
 import Navbar from './components/Navbar';
 import ScrollManager from './components/ScrollManager';
+import { useSiteMotion, usePageIn } from './lib/motion';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import SuiteDetails from './pages/SuiteDetails';
 import Reserve from './pages/Reserve';
-import { useParallaxFallback } from './hooks/useParallaxFallback';
 
 function App() {
-  useParallaxFallback();
 
   return (
     <BookingProvider>
@@ -43,8 +42,10 @@ function App() {
  */
 function RoutedPages() {
   const { pathname } = useLocation();
+  useSiteMotion(pathname);
+  usePageIn(pathname);
   return (
-    <div key={pathname} className="motion-safe:animate-route-in">
+    <div key={pathname} data-page>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/suite/:id" element={<SuiteDetails />} />

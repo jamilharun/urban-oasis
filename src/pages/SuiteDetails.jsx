@@ -196,7 +196,7 @@ export default function SuiteDetails() {
               {suite.reviews.map((review) => (
                 <blockquote
                   key={review.name}
-                  className="reveal rounded-card border border-white/10 bg-white/5 p-7 flex flex-col"
+                  className="rounded-card border border-white/10 bg-white/5 p-7 flex flex-col"
                 >
                   <div className="flex gap-1 mb-5" aria-label={`${review.rating} out of 5`}>
                     {[0, 1, 2, 3, 4].map((i) => (

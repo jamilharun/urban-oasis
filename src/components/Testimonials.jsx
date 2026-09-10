@@ -38,7 +38,7 @@ export default function Testimonials() {
 
         <div className="reveal-group grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((review) => (
-            <div key={review.id} className="reveal bg-white p-8 rounded-card shadow-sm border border-gray-100 flex flex-col justify-between transition-shadow duration-300 hover:shadow-md">
+            <div key={review.id} className="bg-white p-8 rounded-card shadow-sm border border-gray-100 flex flex-col justify-between transition-shadow duration-300 hover:shadow-md">
               <div>
                 <div className="flex gap-1 mb-6">
                   {[...Array(review.rating)].map((_, i) => (

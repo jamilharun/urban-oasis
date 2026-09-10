@@ -41,7 +41,7 @@ export default function Privileges() {
 
         <ul className="reveal-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {privilegesByFloor.map((p) => (
-            <li key={p.id} className="reveal group-hover:border-condo-accent/45 group relative rounded-card overflow-hidden border border-white/10">
+            <li key={p.id} className="group-hover:border-condo-accent/45 group relative rounded-card overflow-hidden border border-white/10">
               <div className="aspect-[4/5]">
                 <Plate
                   src={p.image}

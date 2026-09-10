@@ -42,7 +42,7 @@ export default function AvailableSuites() {
             return (
               <article
                 key={suite.id}
-                className={`reveal group rounded-card overflow-hidden flex flex-col border transition-colors ${
+                className={`group rounded-card overflow-hidden flex flex-col border transition-colors ${
                   status.ok
                     ? 'group-hover:border-condo-accent/45 border-white/10 bg-white/5 hover:bg-white/10'
                     : 'border-white/5 bg-white/[0.02]'

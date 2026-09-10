@@ -16,12 +16,14 @@ export default function Navbar() {
   // Only the home route has a hero to sit over. Everywhere else the bar keeps
   // its ground from the first pixel.
   const overHero = useLocation().pathname === '/';
+  // Grounded is the nav's base state, so under prefers-reduced-motion — where
+  // the GSAP tween never runs — the bar stays legible instead of being
+  // permanently transparent. The tween supplies the transparent start.
 
   return (
     <nav
-      className={`fixed w-full z-50 bg-condo-dark/70 backdrop-blur-md border-b border-white/10 ${
-        overHero ? 'nav-over-hero' : ''
-      }`}
+      className="fixed w-full z-50 bg-condo-dark/70 backdrop-blur-md border-b border-white/10"
+      {...(overHero ? { 'data-nav-over-hero': '' } : {})}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">

@@ -24,19 +24,19 @@ export default function Hero() {
 
       <div className="relative z-10 w-full px-4 max-w-5xl mx-auto mt-20">
         <div className="text-center mb-12">
-          <p className="text-condo-accent eyebrow mb-4 animate-fade-in-up">
+          <p data-intro className="text-condo-accent eyebrow mb-4">
             One building · Thirty-two floors
           </p>
-          <h1 className="text-balance text-display-sm md:text-display-xl font-light text-white mb-8 md:mb-10 animate-fade-in-up animate-delay-100">
+          <h1 data-intro className="text-balance text-display-sm md:text-display-xl font-light text-white mb-8 md:mb-10">
             Book the building,<br /> not just the room
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-measure mx-auto font-light animate-fade-in-up animate-delay-200">
+          <p data-intro className="text-lg md:text-xl text-gray-300 max-w-measure mx-auto font-light">
             Resident-hosted suites with the spa, the pool, the chef and a 24/7 concierge
             attached to your stay — not sold back to you as extras.
           </p>
         </div>
 
-        <div className="bg-black/40 backdrop-blur-md rounded-card p-4 md:p-2 animate-fade-in-up animate-delay-300 border border-white/20 shadow-2xl relative z-20">
+        <div data-intro className="bg-black/40 backdrop-blur-md rounded-card p-4 md:p-2 border border-white/20 shadow-2xl relative z-20">
           <div className="flex flex-col md:flex-row gap-4 md:items-stretch">
             <label className="flex-1 px-4 py-2 border-b md:border-b-0 md:border-r border-white/10 cursor-pointer">
               <span className="block text-xs uppercase tracking-widest text-condo-accent mb-1">Check In</span>
@@ -87,7 +87,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <p className="text-center text-sm text-gray-400 mt-6 font-light animate-fade-in-up animate-delay-400">
+        <p data-intro className="text-center text-sm text-gray-400 mt-6 font-light">
           {nights > 0 ? (
             <>
               <span className="text-white font-medium">{availableCount}</span> of 6 suites free for{' '}
