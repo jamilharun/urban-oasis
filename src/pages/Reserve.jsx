@@ -2,16 +2,17 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Check, Plus, Calendar, Users, Sparkles, ShieldCheck } from 'lucide-react';
 import { suites, standingPrivileges, addablePrivileges, suiteStatus } from '../data/building';
-import { currency, formatDate, todayISO } from '../lib/format';
+import { currency, formatDate } from '../lib/format';
 import { useBooking } from '../context/booking';
 import HostCard from '../components/HostCard';
+import SearchFields from '../components/SearchFields';
 import SuiteNotFound from '../components/SuiteNotFound';
 import { STATUS_ICON } from '../components/statusIcons';
 import Plate from '../components/Plate';
 
 export default function Reserve() {
   const { id } = useParams();
-  const { checkIn, checkOut, guests, nights, setField } = useBooking();
+  const { checkIn, checkOut, guests, nights } = useBooking();
   // Local to this reservation: a privilege can never follow you to another suite.
   const [privilegeIds, setPrivilegeIds] = useState([]);
 
@@ -58,51 +59,7 @@ export default function Reserve() {
               <h2 className="text-balance text-2xl font-display font-light mb-6 border-b border-white/10 pb-4">
                 1 · Your dates
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <label className="rounded-card border border-white/10 bg-white/5 px-5 py-4 cursor-pointer">
-                  <span className="block text-xs uppercase tracking-widest text-condo-accent mb-2">
-                    Check in
-                  </span>
-                  <input
-                    type="date"
-                    value={checkIn}
-                    min={todayISO}
-                    onChange={(e) => setField('checkIn', e.target.value)}
-                    className="w-full bg-transparent text-white cursor-pointer [color-scheme:dark]"
-                  />
-                </label>
-                <label className="rounded-card border border-white/10 bg-white/5 px-5 py-4 cursor-pointer">
-                  <span className="block text-xs uppercase tracking-widest text-condo-accent mb-2">
-                    Check out
-                  </span>
-                  <input
-                    type="date"
-                    value={checkOut}
-                    min={checkIn || todayISO}
-                    onChange={(e) => setField('checkOut', e.target.value)}
-                    className="w-full bg-transparent text-white cursor-pointer [color-scheme:dark]"
-                  />
-                </label>
-                <label className="rounded-card border border-white/10 bg-white/5 px-5 py-4 cursor-pointer relative">
-                  <span className="block text-xs uppercase tracking-widest text-condo-accent mb-2">
-                    Guests
-                  </span>
-                  <select
-                    value={guests}
-                    onChange={(e) => setField('guests', Number(e.target.value))}
-                    className="w-full bg-transparent text-white cursor-pointer appearance-none pr-6"
-                  >
-                    {[1, 2, 3, 4, 5, 6].map((n) => (
-                      <option key={n} value={n} className="bg-condo-dark">
-                        {n} {n === 1 ? 'guest' : 'guests'}
-                      </option>
-                    ))}
-                  </select>
-                  <span aria-hidden className="pointer-events-none absolute right-5 bottom-5 text-condo-accent text-xs">
-                    ▾
-                  </span>
-                </label>
-              </div>
+              <SearchFields />
 
               {!status.ok && (
                 <p className="flex items-start gap-2.5 mt-4 rounded-control border border-condo-accent/40 bg-condo-accent/10 p-4 text-sm text-gray-100">
@@ -220,7 +177,7 @@ export default function Reserve() {
                   <span className="font-sans tabular-nums">
                     {currency(suite.price)} × {nights} {nights === 1 ? 'night' : 'nights'}
                   </span>
-                  <span className="font-sans tabular-font-sans tabular-nums text-white">{currency(roomTotal)}</span>
+                  <span className="font-sans tabular-nums text-white">{currency(roomTotal)}</span>
                 </li>
                 {chosen.map((p) => (
                   <li key={p.id} className="flex justify-between gap-3 text-gray-300">
@@ -228,7 +185,7 @@ export default function Reserve() {
                       <Sparkles className="w-3.5 h-3.5 text-condo-accent shrink-0" />
                       <span className="truncate">{p.name}</span>
                     </span>
-                    <span className="font-sans tabular-font-sans tabular-nums text-white shrink-0">{p.price ? currency(p.price) : '—'}</span>
+                    <span className="font-sans tabular-nums text-white shrink-0">{p.price ? currency(p.price) : '—'}</span>
                   </li>
                 ))}
                 {standingPrivileges.length > 0 && (
@@ -241,10 +198,10 @@ export default function Reserve() {
 
               <div className="flex justify-between items-baseline mt-5 pt-5 border-t border-white/10">
                 <span className="text-white font-medium">Total</span>
-                <span className="font-sans tabular-font-sans tabular-nums text-2xl text-white">{currency(grandTotal)}</span>
+                <span className="font-sans tabular-nums text-2xl text-white">{currency(grandTotal)}</span>
               </div>
               {privilegeTotal > 0 && (
-                <p className="font-sans tabular-font-sans tabular-nums text-xs text-gray-400 mt-2">
+                <p className="font-sans tabular-nums text-xs text-gray-400 mt-2">
                   {currency(roomTotal)} suite + {currency(privilegeTotal)} privileges
                 </p>
               )}

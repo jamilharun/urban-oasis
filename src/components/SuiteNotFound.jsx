@@ -11,10 +11,10 @@ export default function SuiteNotFound({ id }) {
           There is no suite with the id “{id}” in this building.
         </p>
         <Link
-          to="/#suites"
+          to="/suites"
           className="inline-flex items-center gap-2 eyebrow text-condo-accent hover:text-white transition-colors"
         >
-          <ArrowLeft className="w-4 h-4" /> Back to the six suites
+          <ArrowLeft className="w-4 h-4" /> Back to all six suites
         </Link>
       </div>
     </main>

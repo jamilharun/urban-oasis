@@ -6,6 +6,7 @@ import { useSiteMotion, usePageIn } from './lib/motion';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import SuiteDetails from './pages/SuiteDetails';
+import Suites from './pages/Suites';
 import Reserve from './pages/Reserve';
 
 function App() {
@@ -48,6 +49,7 @@ function RoutedPages() {
     <div key={pathname} data-page>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/suites" element={<Suites />} />
         <Route path="/suite/:id" element={<SuiteDetails />} />
         <Route path="/suite/:id/reserve" element={<Reserve />} />
       </Routes>

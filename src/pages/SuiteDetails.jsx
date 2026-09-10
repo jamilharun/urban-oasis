@@ -26,7 +26,7 @@ export default function SuiteDetails() {
     <main id="main" className="scroll-mt-24 pb-24 pt-28 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
-          to="/#suites"
+          to="/suites"
           className="inline-flex items-center gap-2 text-condo-accent hover:text-white transition-colors mb-8 text-sm uppercase tracking-widest"
         >
           <ArrowLeft className="w-4 h-4" /> All suites
@@ -52,7 +52,7 @@ export default function SuiteDetails() {
           </div>
 
           <div className="shrink-0 lg:text-right">
-            <p className="font-sans tabular-font-sans tabular-nums text-3xl text-white">
+            <p className="font-sans tabular-nums text-3xl text-white">
               {currency(suite.price)}
               <span className="text-sm text-gray-400 font-sans"> / night</span>
             </p>

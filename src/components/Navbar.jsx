@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 // Absolute, route-prefixed targets: bare hashes were inert on /suite/:id,
 // where none of these ids exist.
 const links = [
-  { to: '/#suites', label: 'Suites' },
+  { to: '/suites', label: 'Suites' },
   { to: '/#privileges', label: 'Privileges' },
   { to: '/#building', label: 'The Building' },
   { to: '/#hosts', label: 'Hosts' },
