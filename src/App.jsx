@@ -1,13 +1,16 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { BookingProvider } from './context/BookingContext';
+import { BookingProvider } from './context/BookingProvider';
 import Navbar from './components/Navbar';
 import ScrollManager from './components/ScrollManager';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import SuiteDetails from './pages/SuiteDetails';
 import Reserve from './pages/Reserve';
+import { useParallaxFallback } from './hooks/useParallaxFallback';
 
 function App() {
+  useParallaxFallback();
+
   return (
     <BookingProvider>
       <BrowserRouter>
@@ -41,7 +44,7 @@ function App() {
 function RoutedPages() {
   const { pathname } = useLocation();
   return (
-    <div key={pathname} className="route-fade">
+    <div key={pathname} className="motion-safe:animate-route-in">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/suite/:id" element={<SuiteDetails />} />

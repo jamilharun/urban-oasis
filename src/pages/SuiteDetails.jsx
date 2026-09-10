@@ -2,32 +2,17 @@ import { useParams, Link } from 'react-router-dom';
 import {
   ArrowLeft, ArrowRight, Check, Star, Maximize, MoveVertical, Bath, Compass, Sofa, Droplets,
 } from 'lucide-react';
-import { suites, currency, standingPrivileges, reviewSummary } from '../data/building';
+import { suites, standingPrivileges, reviewSummary } from '../data/building';
+import { currency } from '../lib/format';
 import HostCard from '../components/HostCard';
+import SuiteNotFound from '../components/SuiteNotFound';
 import Plate from '../components/Plate';
 
 export default function SuiteDetails() {
   const { id } = useParams();
   const suite = suites.find((s) => s.id === id);
 
-  if (!suite) {
-    return (
-      <main id="main" className="pt-28 pb-24 text-white">
-        <div className="max-w-2xl mx-auto px-4 text-center">
-          <h1 className="text-3xl font-display font-light mb-4">No such suite</h1>
-          <p className="text-gray-400 font-light mb-8">
-            There is no suite with the id “{id}” in this building.
-          </p>
-          <Link
-            to="/#suites"
-            className="inline-flex items-center gap-2 text-condo-accent hover:text-white transition-colors text-sm uppercase tracking-widest"
-          >
-            <ArrowLeft className="w-4 h-4" /> Back to the six suites
-          </Link>
-        </div>
-      </main>
-    );
-  }
+  if (!suite) return <SuiteNotFound id={id} />;
 
   const { count, average } = reviewSummary(suite);
   const specs = [
@@ -38,7 +23,7 @@ export default function SuiteDetails() {
   ];
 
   return (
-    <main id="main" className="pb-24 pt-28 text-white">
+    <main id="main" className="scroll-mt-24 pb-24 pt-28 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           to="/#suites"
@@ -53,7 +38,7 @@ export default function SuiteDetails() {
             <p className="text-condo-accent eyebrow mb-3">
               Floor {suite.floor} · {suite.type}
             </p>
-            <h1 className="text-display-sm md:text-display-lg font-display font-light">{suite.name}</h1>
+            <h1 className="text-balance text-display-sm md:text-display-lg font-display font-light">{suite.name}</h1>
             {count > 0 && (
               <p className="flex items-center gap-2 mt-4 text-sm text-gray-300">
                 <Star className="w-4 h-4 fill-condo-accent text-condo-accent" />
@@ -67,7 +52,7 @@ export default function SuiteDetails() {
           </div>
 
           <div className="shrink-0 lg:text-right">
-            <p className="nums text-3xl text-white">
+            <p className="font-sans tabular-font-sans tabular-nums text-3xl text-white">
               {currency(suite.price)}
               <span className="text-sm text-gray-400 font-sans"> / night</span>
             </p>
@@ -102,7 +87,7 @@ export default function SuiteDetails() {
 
         {/* ---- Room by room -------------------------------------------- */}
         <section className="mb-20">
-          <h2 className="text-3xl font-display font-light mb-10">Room by room</h2>
+          <h2 className="text-balance text-3xl font-display font-light mb-10">Room by room</h2>
           <div className="space-y-16">
             {suite.rooms.map((room, i) => (
               <article
@@ -119,8 +104,8 @@ export default function SuiteDetails() {
                   />
                 </div>
                 <div className="w-full lg:w-2/5 space-y-5">
-                  <h3 className="text-2xl font-display font-light">{room.name}</h3>
-                  <p className="text-gray-400 font-light leading-relaxed">{room.copy}</p>
+                  <h3 className="text-balance text-2xl font-display font-light">{room.name}</h3>
+                  <p className="text-pretty text-gray-400 font-light leading-relaxed">{room.copy}</p>
                   <ul className="space-y-2 pt-2 border-t border-white/10">
                     {room.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 text-sm text-gray-300">
@@ -138,7 +123,7 @@ export default function SuiteDetails() {
         {/* ---- Furnishings and bath ------------------------------------ */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           <div className="rounded-card border border-white/10 bg-white/5 p-8">
-            <h2 className="flex items-center gap-3 text-2xl font-display font-light mb-6">
+            <h2 className="text-balance flex items-center gap-3 text-2xl font-display font-light mb-6">
               <Sofa className="w-5 h-5 text-condo-accent" /> What is in the rooms
             </h2>
             <ul className="space-y-3">
@@ -152,10 +137,10 @@ export default function SuiteDetails() {
           </div>
 
           <div className="rounded-card border border-white/10 bg-white/5 p-8">
-            <h2 className="flex items-center gap-3 text-2xl font-display font-light mb-4">
+            <h2 className="text-balance flex items-center gap-3 text-2xl font-display font-light mb-4">
               <Droplets className="w-5 h-5 text-condo-accent" /> The bathrooms
             </h2>
-            <p className="text-gray-400 font-light leading-relaxed mb-6">{suite.bath.copy}</p>
+            <p className="text-pretty text-gray-400 font-light leading-relaxed mb-6">{suite.bath.copy}</p>
             <ul className="space-y-3">
               {suite.bath.fittings.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-300 font-light">
@@ -169,7 +154,7 @@ export default function SuiteDetails() {
 
         {/* ---- Plan ---------------------------------------------------- */}
         <section className="mb-20">
-          <h2 className="text-3xl font-display font-light mb-8">The plan</h2>
+          <h2 className="text-balance text-3xl font-display font-light mb-8">The plan</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {suite.gallery.map((shot) => (
               <Plate
@@ -184,9 +169,9 @@ export default function SuiteDetails() {
 
         {/* ---- Reviews for THIS suite ---------------------------------- */}
         {count > 0 && (
-          <section id="suite-reviews" className="mb-20">
+          <section id="suite-reviews" className="scroll-mt-24 mb-20">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
-              <h2 className="text-3xl font-display font-light">
+              <h2 className="text-balance text-3xl font-display font-light">
                 Guests who stayed in this suite
               </h2>
               <p className="flex items-center gap-2 text-sm text-gray-400">
@@ -226,7 +211,7 @@ export default function SuiteDetails() {
                       />
                     ))}
                   </div>
-                  <p className="text-gray-300 font-light leading-relaxed italic flex-grow">
+                  <p className="text-pretty [hanging-punctuation:first] text-gray-300 font-light leading-relaxed italic flex-grow">
                     “{review.text}”
                   </p>
                   <footer className="mt-6 pt-5 border-t border-white/10">
@@ -244,7 +229,7 @@ export default function SuiteDetails() {
         {/* ---- Included, host, and the way out ------------------------- */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           <div>
-            <h2 className="text-2xl font-display font-light mb-6">Included with this suite</h2>
+            <h2 className="text-balance text-2xl font-display font-light mb-6">Included with this suite</h2>
             <ul className="space-y-3">
               {standingPrivileges.map((privilege) => (
                 <li key={privilege.id} className="flex items-start gap-3 text-gray-300 font-light">
@@ -264,7 +249,7 @@ export default function SuiteDetails() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-display font-light mb-6">Your resident host</h2>
+            <h2 className="text-balance text-2xl font-display font-light mb-6">Your resident host</h2>
             <HostCard host={suite.host} suiteFloor={suite.floor} variant="full" />
           </div>
         </section>

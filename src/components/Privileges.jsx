@@ -16,7 +16,7 @@ export default function Privileges() {
   return (
     <section
       id="privileges"
-      className="section-bloom relative overflow-hidden py-32 text-white border-t border-white/5"
+      className="scroll-mt-24 scroll-mt-24 section-bloom relative overflow-hidden py-32 text-white border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="reveal mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
@@ -24,8 +24,8 @@ export default function Privileges() {
             <p className="text-condo-accent eyebrow mb-4">
               The privileges
             </p>
-            <h2 className="text-display-sm md:text-display-md font-display font-light mb-4">Six floors of it</h2>
-            <p className="text-gray-400 font-light">
+            <h2 className="text-balance text-display-sm md:text-display-md font-display font-light mb-4">Six floors of it</h2>
+            <p className="text-pretty text-gray-400 font-light">
               Three come with any suite. Three you attach when you reserve one. None of them are a
               day pass, a resort fee, or a phone number in another city.
             </p>
@@ -41,12 +41,12 @@ export default function Privileges() {
 
         <ul className="reveal-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {privilegesByFloor.map((p) => (
-            <li key={p.id} className="reveal frame-warm group relative rounded-card overflow-hidden border border-white/10">
+            <li key={p.id} className="reveal group-hover:border-condo-accent/45 group relative rounded-card overflow-hidden border border-white/10">
               <div className="aspect-[4/5]">
                 <Plate
                   src={p.image}
                   alt={p.name}
-                  className="plate-hover w-full h-full object-cover"
+                  className="transition duration-500 group-hover:brightness-105 group-hover:saturate-[1.04] w-full h-full object-cover"
                 />
               </div>
 

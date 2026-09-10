@@ -1,17 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer utilities {
-  .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
-  }
-  .glass-dark {
-    @apply bg-black/40 backdrop-blur-md border border-white/10;
-  }
-}
 
 body {
   @apply text-condo-light font-sans antialiased;
@@ -85,22 +74,6 @@ body {
 }
 
 /* Hairline rule to open a section, brighter in the middle. */
-.section-rule {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(192, 160, 98, 0.35), transparent);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  @apply font-display;
-  /* Keeps headlines off a one-word last line. The display sizes carry their
-     own letter-spacing, so no blanket tracking here. */
-  text-wrap: balance;
-}
-
-p {
-  text-wrap: pretty;
-}
-
 @layer components {
   /* Was repeated ten times with two different tracking values. */
   .eyebrow {
@@ -108,23 +81,6 @@ p {
   }
 }
 
-/* Figures in a stacked column must not change width between rows. Inter has
-   real tabular figures; the display face is for display, not for data. */
-.nums {
-  @apply font-sans;
-  font-variant-numeric: tabular-nums;
-}
-
-/* Lets the opening quote hang outside the measure so the text edge stays
-   straight. Safari honours it; everywhere else is unaffected. */
-blockquote p {
-  hanging-punctuation: first;
-}
-
-/* Sections are anchor targets and the navbar is fixed at h-20. */
-[id] {
-  scroll-margin-top: 6rem;
-}
 
 /* Every interactive element had `outline-none` and no replacement.
    Written as plain CSS on purpose: @apply-ing custom-scale utilities here breaks
@@ -141,11 +97,6 @@ blockquote p {
 /* Brass is only 2.4:1 on the light section, so the ring darkens there. */
 .bg-condo-light {
   --focus-ring: #7a6224; /* condo-ink */
-}
-
-/* Native date pickers rendered a dark icon on a dark panel. */
-input[type="date"] {
-  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -180,7 +131,7 @@ input[type="date"] {
    as sitting behind the content rather than moving with it. */
 @keyframes hero-drift {
   from { transform: scale(1.06) translateY(0); }
-  to   { transform: scale(1.12) translateY(7%); }
+  to   { transform: scale(1.14) translateY(7%); }
 }
 
 /* A plate drifting through its own mask as it crosses the viewport. */
@@ -227,55 +178,14 @@ input[type="date"] {
 
     .hero-plate {
       animation: hero-drift linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0 100vh;
+      animation-timeline: scroll();
+      animation-range: 0px 100vh;
     }
 
     .nav-over-hero {
       animation: nav-ground linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0 140px;
+      animation-timeline: scroll();
+      animation-range: 0px 140px;
     }
-  }
-}
-
-/* ---------------------------------------------------------------------------
-   Hover on a plate. Zooming a photograph on hover is a cheap tell — the image
-   softens, the crop shifts, and nothing about it says considered. A small
-   brightness lift with the frame warming to brass reads as the light coming
-   up in the room instead.
---------------------------------------------------------------------------- */
-
-.plate-hover {
-  transition: filter 500ms cubic-bezier(0.33, 1, 0.68, 1);
-}
-
-.group:hover .plate-hover {
-  filter: brightness(1.06) saturate(1.04);
-}
-
-/* The frame, not the photo, is what moves. */
-.frame-warm {
-  transition: border-color 400ms ease, box-shadow 400ms ease;
-}
-
-.group:hover .frame-warm,
-.frame-warm:hover {
-  border-color: rgb(192 160 98 / 0.45);
-  box-shadow: 0 0 0 1px rgb(192 160 98 / 0.12);
-}
-
-/* ---------------------------------------------------------------------------
-   Route change. A 200ms settle so pages arrive rather than cut.
---------------------------------------------------------------------------- */
-
-@keyframes route-in {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: none; }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .route-fade {
-    animation: route-in 220ms cubic-bezier(0.33, 1, 0.68, 1) both;
   }
 }

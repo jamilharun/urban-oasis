@@ -6,9 +6,10 @@ import { BadgeCheck, MessageCircle } from 'lucide-react';
  * the standalone block.
  */
 export default function HostCard({ host, suiteFloor, variant = 'inline' }) {
-  const distance = suiteFloor == null || host.floor === suiteFloor
+  const gap = suiteFloor == null ? 0 : host.floor - suiteFloor;
+  const distance = gap === 0
     ? 'Hosts this suite in person'
-    : `Lives ${Math.abs(host.floor - suiteFloor)} ${Math.abs(host.floor - suiteFloor) === 1 ? 'floor' : 'floors'} ${host.floor > suiteFloor ? 'up' : 'down'}`;
+    : `Lives ${Math.abs(gap)} ${Math.abs(gap) === 1 ? 'floor' : 'floors'} ${gap > 0 ? 'up' : 'down'}`;
 
   if (variant === 'inline') {
     return (

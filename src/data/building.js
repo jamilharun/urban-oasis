@@ -1,34 +1,6 @@
-// One building, one product. Everything the booking flow needs lives here so the
-// suites, the privileges and the floor stack can never drift out of sync.
-
-const pad = (n) => String(n).padStart(2, '0');
-const iso = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
-
-export const todayISO = iso(new Date());
-
-/** ISO date `n` days from today, in local time. */
-export function offsetDays(n) {
-  const d = new Date();
-  d.setDate(d.getDate() + n);
-  return iso(d);
-}
-
-export function nightsBetween(checkIn, checkOut) {
-  if (!checkIn || !checkOut) return 0;
-  const ms = new Date(`${checkOut}T00:00`) - new Date(`${checkIn}T00:00`);
-  return Math.max(0, Math.round(ms / 86400000));
-}
-
-export function formatDate(value) {
-  if (!value) return '—';
-  return new Date(`${value}T00:00`).toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-  });
-}
-
-export const currency = (n) =>
-  n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+// One building, one product. The suites, the privileges and the floor stack all
+// live here so they can never drift out of sync. Formatting lives in lib/format.
+import { offsetDays, nightsBetween } from '../lib/format';
 
 // ---------------------------------------------------------------------------
 // The residents who host. This is the claim the copy makes three times over —

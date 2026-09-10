@@ -21,16 +21,16 @@ export default function FloorStack() {
   const linkedSuites = (active.suiteIds ?? []).map((id) => suites.find((s) => s.id === id));
 
   return (
-    <section id="building" className="section-bloom relative overflow-hidden py-28 text-white border-t border-white/5">
+    <section id="building" className="scroll-mt-24 section-bloom relative overflow-hidden py-28 text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="reveal mb-12 max-w-measure">
           <p className="text-condo-accent eyebrow mb-4">
             One address
           </p>
-          <h2 className="text-display-sm md:text-display-md font-display font-light mb-4">
+          <h2 className="text-balance text-display-sm md:text-display-md font-display font-light mb-4">
             Everything is a lift ride
           </h2>
-          <p className="text-gray-400 font-light">
+          <p className="text-pretty text-gray-400 font-light">
             There is no map here, because there is nowhere to go. Thirty-two floors, four of them
             given back to guests. Pick a floor to see what is on it.
           </p>
@@ -97,9 +97,9 @@ export default function FloorStack() {
                   <p className="text-xs uppercase tracking-widest text-condo-accent mb-2">
                     Floor {active.floors} · {KIND_LABEL[active.kind]}
                   </p>
-                  <h3 className="text-3xl font-display font-light">{active.label}</h3>
+                  <h3 className="text-balance text-3xl font-display font-light">{active.label}</h3>
                 </div>
-                <p className="text-gray-400 font-light leading-relaxed">{active.note}</p>
+                <p className="text-pretty text-gray-400 font-light leading-relaxed">{active.note}</p>
 
                 {linkedPrivileges.length > 0 && (
                   <ul className="flex flex-wrap gap-2 pt-2">
@@ -121,7 +121,7 @@ export default function FloorStack() {
                         key={s.id}
                         className="text-xs text-gray-300 border border-white/15 rounded-full px-3 py-1"
                       >
-                        {s.name} · <span className="nums">${s.price}</span>/night
+                        {s.name} · <span className="font-sans tabular-nums">${s.price}</span>/night
                       </li>
                     ))}
                   </ul>

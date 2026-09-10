@@ -1,6 +1,6 @@
 import { Search } from 'lucide-react';
-import { useBooking } from '../context/useBooking';
-import { todayISO } from '../data/building';
+import { useBooking } from '../context/booking';
+import { todayISO } from '../lib/format';
 import Plate from './Plate';
 
 export default function Hero() {
@@ -11,7 +11,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="scroll-mt-24 relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Plate
           src="/images/hero"
@@ -27,7 +27,7 @@ export default function Hero() {
           <p className="text-condo-accent eyebrow mb-4 animate-fade-in-up">
             One building · Thirty-two floors
           </p>
-          <h1 className="text-display-sm md:text-display-xl font-light text-white mb-8 md:mb-10 animate-fade-in-up animate-delay-100">
+          <h1 className="text-balance text-display-sm md:text-display-xl font-light text-white mb-8 md:mb-10 animate-fade-in-up animate-delay-100">
             Book the building,<br /> not just the room
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-measure mx-auto font-light animate-fade-in-up animate-delay-200">
@@ -36,7 +36,7 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="glass-dark rounded-card p-4 md:p-2 animate-fade-in-up animate-delay-300 border border-white/20 shadow-2xl relative z-20">
+        <div className="bg-black/40 backdrop-blur-md rounded-card p-4 md:p-2 animate-fade-in-up animate-delay-300 border border-white/20 shadow-2xl relative z-20">
           <div className="flex flex-col md:flex-row gap-4 md:items-stretch">
             <label className="flex-1 px-4 py-2 border-b md:border-b-0 md:border-r border-white/10 cursor-pointer">
               <span className="block text-xs uppercase tracking-widest text-condo-accent mb-1">Check In</span>
@@ -45,7 +45,7 @@ export default function Hero() {
                 value={checkIn}
                 min={todayISO}
                 onChange={(e) => setField('checkIn', e.target.value)}
-                className="w-full bg-transparent text-white cursor-pointer"
+                className="w-full bg-transparent text-white cursor-pointer [color-scheme:dark]"
               />
             </label>
 
@@ -56,7 +56,7 @@ export default function Hero() {
                 value={checkOut}
                 min={checkIn || todayISO}
                 onChange={(e) => setField('checkOut', e.target.value)}
-                className="w-full bg-transparent text-white cursor-pointer"
+                className="w-full bg-transparent text-white cursor-pointer [color-scheme:dark]"
               />
             </label>
 

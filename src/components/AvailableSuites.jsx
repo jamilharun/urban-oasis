@@ -1,36 +1,31 @@
-import { Users, ArrowUpRight, CalendarX2, Moon } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { useBooking } from '../context/useBooking';
-import { currency, formatDate } from '../data/building';
+import { useBooking } from '../context/booking';
+import { currency, formatDate } from '../lib/format';
 import HostCard from './HostCard';
+import { STATUS_ICON } from './statusIcons';
 import Plate from './Plate';
-
-const STATUS_ICON = {
-  capacity: Users,
-  booked: CalendarX2,
-  minstay: Moon,
-};
 
 export default function AvailableSuites() {
   const navigate = useNavigate();
   const { results, nights, checkIn, checkOut, guests, availableCount } = useBooking();
 
   return (
-    <section id="suites" className="pt-24 pb-32 text-white relative">
-      <div className="section-rule absolute top-0 left-0 w-full"></div>
+    <section id="suites" className="scroll-mt-24 pt-24 pb-32 text-white relative">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-condo-accent/35 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="reveal mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
           <div className="max-w-measure">
             <p className="text-condo-accent eyebrow mb-4">Step one</p>
-            <h2 className="text-display-sm md:text-display-md font-display font-light mb-4">Pick your suite</h2>
-            <p className="text-gray-400 font-light">
+            <h2 className="text-balance text-display-sm md:text-display-md font-display font-light mb-4">Pick your suite</h2>
+            <p className="text-pretty text-gray-400 font-light">
               Six suites, each hosted by someone who lives in the building. Pick one, then attach
               the privileges you want — the stay is assembled, not listed.
             </p>
           </div>
 
-          <div className="glass-dark rounded-card px-5 py-4 shrink-0">
+          <div className="bg-black/40 backdrop-blur-md rounded-card px-5 py-4 shrink-0">
             <p className="text-xs uppercase tracking-widest text-condo-accent mb-1">Your search</p>
             <p className="text-sm text-white">
               {formatDate(checkIn)} → {formatDate(checkOut)} · {nights} {nights === 1 ? 'night' : 'nights'} · {guests} {guests === 1 ? 'guest' : 'guests'}
@@ -49,7 +44,7 @@ export default function AvailableSuites() {
                 key={suite.id}
                 className={`reveal group rounded-card overflow-hidden flex flex-col border transition-colors ${
                   status.ok
-                    ? 'frame-warm border-white/10 bg-white/5 hover:bg-white/10'
+                    ? 'group-hover:border-condo-accent/45 border-white/10 bg-white/5 hover:bg-white/10'
                     : 'border-white/5 bg-white/[0.02]'
                 }`}
               >
@@ -57,7 +52,7 @@ export default function AvailableSuites() {
                   <Plate
                     src={suite.image}
                     alt={suite.name}
-                    className={`plate-hover w-full h-full object-cover ${
+                    className={`transition duration-500 group-hover:brightness-105 group-hover:saturate-[1.04] w-full h-full object-cover ${
                       status.ok ? '' : 'grayscale opacity-40'
                     }`}
                   />
@@ -66,7 +61,7 @@ export default function AvailableSuites() {
                   </div>
                   {status.ok ? (
                     <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 shadow-lg">
-                      <span className="nums font-semibold text-white">{currency(suite.price)}</span>
+                      <span className="font-sans tabular-font-sans tabular-nums font-semibold text-white">{currency(suite.price)}</span>
                       <span className="text-gray-300 text-xs font-light"> / night</span>
                     </div>
                   ) : (
@@ -79,7 +74,7 @@ export default function AvailableSuites() {
 
                 <div className="p-6 flex flex-col flex-grow">
                   <p className="text-condo-accent text-xs tracking-widest uppercase mb-2">{suite.type}</p>
-                  <h3 className="text-2xl font-display font-light mb-4">{suite.name}</h3>
+                  <h3 className="text-balance text-2xl font-display font-light mb-4">{suite.name}</h3>
 
                   <div className="mb-5 pb-5 border-b border-white/10">
                     <HostCard host={suite.host} suiteFloor={suite.floor} />
@@ -89,7 +84,7 @@ export default function AvailableSuites() {
                     <span className="text-sm text-gray-400">
                       {nights} {nights === 1 ? 'night' : 'nights'} · sleeps {suite.sleeps}
                     </span>
-                    <span className="nums text-lg text-white font-medium">
+                    <span className="font-sans tabular-font-sans tabular-nums text-lg text-white font-medium">
                       {status.ok ? currency(stayTotal) : '—'}
                     </span>
                   </div>

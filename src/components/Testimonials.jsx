@@ -33,7 +33,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="reveal text-center mb-16 max-w-measure mx-auto">
           <p className="text-condo-ink eyebrow mb-4">Word of Mouth</p>
-          <h2 className="text-display-sm md:text-display-md font-display font-light mb-6">Guest Experiences</h2>
+          <h2 className="text-balance text-display-sm md:text-display-md font-display font-light mb-6">Guest Experiences</h2>
         </div>
 
         <div className="reveal-group grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -45,12 +45,12 @@ export default function Testimonials() {
                     <Star key={i} className="w-5 h-5 fill-condo-ink text-condo-ink" />
                   ))}
                 </div>
-                <p className="text-gray-600 font-light leading-relaxed mb-8 italic text-lg">
+                <p className="text-pretty [hanging-punctuation:first] text-gray-600 font-light leading-relaxed mb-8 italic text-lg">
                   "{review.text}"
                 </p>
               </div>
               <div>
-                <h3 className="font-medium text-lg font-display">{review.name}</h3>
+                <h3 className="text-balance font-medium text-lg font-display">{review.name}</h3>
                 <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">{review.source}</p>
               </div>
             </div>

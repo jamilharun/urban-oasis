@@ -1,16 +1,13 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import {
-  ArrowLeft, Check, Plus, Calendar, Users, CalendarX2, Moon, Sparkles, ShieldCheck,
-} from 'lucide-react';
-import {
-  suites, currency, formatDate, todayISO, standingPrivileges, addablePrivileges, suiteStatus,
-} from '../data/building';
-import { useBooking } from '../context/useBooking';
+import { ArrowLeft, Check, Plus, Calendar, Users, Sparkles, ShieldCheck } from 'lucide-react';
+import { suites, standingPrivileges, addablePrivileges, suiteStatus } from '../data/building';
+import { currency, formatDate, todayISO } from '../lib/format';
+import { useBooking } from '../context/booking';
 import HostCard from '../components/HostCard';
+import SuiteNotFound from '../components/SuiteNotFound';
+import { STATUS_ICON } from '../components/statusIcons';
 import Plate from '../components/Plate';
-
-const STATUS_ICON = { capacity: Users, booked: CalendarX2, minstay: Moon };
 
 export default function Reserve() {
   const { id } = useParams();
@@ -20,21 +17,7 @@ export default function Reserve() {
 
   const suite = suites.find((s) => s.id === id);
 
-  if (!suite) {
-    return (
-      <main id="main" className="pt-28 pb-24 text-white">
-        <div className="max-w-2xl mx-auto px-4 text-center">
-          <h1 className="text-3xl font-display font-light mb-4">No such suite</h1>
-          <Link
-            to="/#suites"
-            className="inline-flex items-center gap-2 text-condo-accent hover:text-white transition-colors text-sm uppercase tracking-widest"
-          >
-            <ArrowLeft className="w-4 h-4" /> Back to the six suites
-          </Link>
-        </div>
-      </main>
-    );
-  }
+  if (!suite) return <SuiteNotFound id={id} />;
 
   // The grid disables unbookable suites, but a URL bypasses the grid — so this
   // page re-runs the same check rather than trusting how you arrived.
@@ -51,7 +34,7 @@ export default function Reserve() {
     setPrivilegeIds((prev) => (prev.includes(pid) ? prev.filter((x) => x !== pid) : [...prev, pid]));
 
   return (
-    <main id="main" className="pb-24 pt-28 text-white">
+    <main id="main" className="scroll-mt-24 pb-24 pt-28 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           to={`/suite/${suite.id}`}
@@ -62,8 +45,8 @@ export default function Reserve() {
 
         <header className="mb-12">
           <p className="text-condo-accent eyebrow mb-3">Reserve</p>
-          <h1 className="text-display-sm md:text-display-md font-display font-light">{suite.name}</h1>
-          <p className="text-gray-400 font-light mt-3">
+          <h1 className="text-balance text-display-sm md:text-display-md font-display font-light">{suite.name}</h1>
+          <p className="text-pretty text-gray-400 font-light mt-3">
             Floor {suite.floor} · {suite.type} · hosted by {suite.host.name}
           </p>
         </header>
@@ -72,7 +55,7 @@ export default function Reserve() {
           <div className="lg:col-span-2 space-y-12">
             {/* ---- Step 1: dates, editable here ------------------------ */}
             <section>
-              <h2 className="text-2xl font-display font-light mb-6 border-b border-white/10 pb-4">
+              <h2 className="text-balance text-2xl font-display font-light mb-6 border-b border-white/10 pb-4">
                 1 · Your dates
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -85,7 +68,7 @@ export default function Reserve() {
                     value={checkIn}
                     min={todayISO}
                     onChange={(e) => setField('checkIn', e.target.value)}
-                    className="w-full bg-transparent text-white cursor-pointer"
+                    className="w-full bg-transparent text-white cursor-pointer [color-scheme:dark]"
                   />
                 </label>
                 <label className="rounded-card border border-white/10 bg-white/5 px-5 py-4 cursor-pointer">
@@ -97,7 +80,7 @@ export default function Reserve() {
                     value={checkOut}
                     min={checkIn || todayISO}
                     onChange={(e) => setField('checkOut', e.target.value)}
-                    className="w-full bg-transparent text-white cursor-pointer"
+                    className="w-full bg-transparent text-white cursor-pointer [color-scheme:dark]"
                   />
                 </label>
                 <label className="rounded-card border border-white/10 bg-white/5 px-5 py-4 cursor-pointer relative">
@@ -143,7 +126,7 @@ export default function Reserve() {
 
             {/* ---- Step 2: the privileges ----------------------------- */}
             <section>
-              <h2 className="text-2xl font-display font-light mb-2 border-b border-white/10 pb-4">
+              <h2 className="text-balance text-2xl font-display font-light mb-2 border-b border-white/10 pb-4">
                 2 · Attach privileges
               </h2>
               <p className="text-sm text-gray-400 font-light mb-6 mt-4">
@@ -194,7 +177,7 @@ export default function Reserve() {
 
             {/* ---- Step 3: who meets you ------------------------------ */}
             <section>
-              <h2 className="text-2xl font-display font-light mb-6 border-b border-white/10 pb-4">
+              <h2 className="text-balance text-2xl font-display font-light mb-6 border-b border-white/10 pb-4">
                 3 · Who meets you
               </h2>
               <HostCard host={suite.host} suiteFloor={suite.floor} variant="full" />
@@ -209,7 +192,7 @@ export default function Reserve() {
                 alt={suite.name}
                 className="w-full h-32 object-cover rounded-control mb-5"
               />
-              <h2 className="text-lg font-display font-light mb-5 border-b border-white/10 pb-4">
+              <h2 className="text-balance text-lg font-display font-light mb-5 border-b border-white/10 pb-4">
                 Reservation summary
               </h2>
 
@@ -234,10 +217,10 @@ export default function Reserve() {
 
               <ul className="space-y-3 border-t border-white/10 pt-5 text-sm">
                 <li className="flex justify-between gap-3 text-gray-300">
-                  <span className="nums">
+                  <span className="font-sans tabular-nums">
                     {currency(suite.price)} × {nights} {nights === 1 ? 'night' : 'nights'}
                   </span>
-                  <span className="nums text-white">{currency(roomTotal)}</span>
+                  <span className="font-sans tabular-font-sans tabular-nums text-white">{currency(roomTotal)}</span>
                 </li>
                 {chosen.map((p) => (
                   <li key={p.id} className="flex justify-between gap-3 text-gray-300">
@@ -245,7 +228,7 @@ export default function Reserve() {
                       <Sparkles className="w-3.5 h-3.5 text-condo-accent shrink-0" />
                       <span className="truncate">{p.name}</span>
                     </span>
-                    <span className="nums text-white shrink-0">{p.price ? currency(p.price) : '—'}</span>
+                    <span className="font-sans tabular-font-sans tabular-nums text-white shrink-0">{p.price ? currency(p.price) : '—'}</span>
                   </li>
                 ))}
                 {standingPrivileges.length > 0 && (
@@ -258,10 +241,10 @@ export default function Reserve() {
 
               <div className="flex justify-between items-baseline mt-5 pt-5 border-t border-white/10">
                 <span className="text-white font-medium">Total</span>
-                <span className="nums text-2xl text-white">{currency(grandTotal)}</span>
+                <span className="font-sans tabular-font-sans tabular-nums text-2xl text-white">{currency(grandTotal)}</span>
               </div>
               {privilegeTotal > 0 && (
-                <p className="nums text-xs text-gray-400 mt-2">
+                <p className="font-sans tabular-font-sans tabular-nums text-xs text-gray-400 mt-2">
                   {currency(roomTotal)} suite + {currency(privilegeTotal)} privileges
                 </p>
               )}

@@ -1,6 +1,7 @@
 import { useMemo, useState, useCallback } from 'react';
-import { BookingContext } from './bookingStore';
-import { suites, offsetDays, nightsBetween, suiteStatus } from '../data/building';
+import { BookingContext } from './booking';
+import { suites, suiteStatus } from '../data/building';
+import { offsetDays, nightsBetween } from '../lib/format';
 
 // A concept should land on its best state, so the search arrives pre-filled.
 const DEFAULTS = {

@@ -2,7 +2,7 @@ import Plate from './Plate';
 
 export default function History() {
   return (
-    <section id="history" className="py-36 text-white border-t border-white/5">
+    <section id="history" className="scroll-mt-24 py-36 text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <div className="w-full lg:w-1/2">
@@ -20,7 +20,7 @@ export default function History() {
           <div className="reveal w-full lg:w-1/2 space-y-8">
             <div>
               <p className="text-condo-accent uppercase tracking-[0.2em] mb-2 text-sm font-semibold">The Vision</p>
-              <h2 className="text-display-sm md:text-display-md font-display font-light">A New Era of <br/>Hospitality</h2>
+              <h2 className="text-balance text-display-sm md:text-display-md font-display font-light">A New Era of <br/>Hospitality</h2>
             </div>
             <div className="space-y-6 text-gray-400 font-light leading-relaxed text-lg">
               <p>

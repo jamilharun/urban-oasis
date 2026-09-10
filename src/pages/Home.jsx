@@ -8,7 +8,7 @@ import History from '../components/History';
 
 export default function Home() {
   return (
-    <main id="main" className="pb-24">
+    <main id="main" className="scroll-mt-24 pb-24">
       <Hero />
       <AvailableSuites />
       <Privileges />

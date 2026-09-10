@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer id="contact" className="relative bg-black/25 pt-20 pb-10 border-t border-white/10 text-white">
+    <footer id="contact" className="scroll-mt-24 relative bg-black/25 pt-20 pb-10 border-t border-white/10 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 lg:col-span-2">
@@ -11,7 +11,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="text-condo-accent tracking-widest uppercase text-sm font-semibold mb-6">Contact</h4>
+            <h4 className="text-balance font-display text-condo-accent tracking-widest uppercase text-sm font-semibold mb-6">Contact</h4>
             <ul className="space-y-4 text-gray-400 font-light">
               <li>123 Luxury Avenue</li>
               <li>Metropolis, NY 10001</li>
@@ -21,7 +21,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="text-condo-accent tracking-widest uppercase text-sm font-semibold mb-6">Follow Us</h4>
+            <h4 className="text-balance font-display text-condo-accent tracking-widest uppercase text-sm font-semibold mb-6">Follow Us</h4>
             <ul className="space-y-4 text-gray-400 font-light">
               <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Facebook</a></li>
