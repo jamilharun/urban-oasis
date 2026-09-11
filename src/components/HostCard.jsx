@@ -29,7 +29,7 @@ export default function HostCard({ host, suiteFloor, variant = 'inline' }) {
   }
 
   return (
-    <div className="bg-white/5 border border-white/10 rounded-card p-6 flex gap-5">
+    <div className="bg-condo-panel/80 backdrop-blur-sm border border-white/10 rounded-card p-6 flex gap-5">
       <Monogram initials={host.initials} size="lg" />
       <div className="space-y-2">
         <div>
