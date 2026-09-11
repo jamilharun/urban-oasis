@@ -56,10 +56,10 @@ export const suites = [
     price: 1250,
     sleeps: 6,
     minNights: 3,
-    image: '/images/penthouse',
+    image: '/images/rooms/penthouse',
     gallery: [
-      { src: '/images/lounge', alt: 'The penthouse entertaining level' },
-      { src: '/images/floorplan', alt: 'Floor plan, level 31' },
+      { src: '/images/amenities/lounge', alt: 'The penthouse entertaining level' },
+      { src: '/images/plans/floorplan', alt: 'Floor plan, level 31' },
     ],
     specs: {
       size: '3,180 sq ft',
@@ -70,13 +70,13 @@ export const suites = [
     rooms: [
       {
         name: 'The entertaining floor',
-        image: '/images/penthouse',
+        image: '/images/rooms/penthouse',
         copy: 'A single room the depth of the building, opened to a double-height window wall. The dining table and the seating group sit on one plane so nothing blocks the view from the lift landing.',
         features: ['Double-height bronze-framed glazing', 'Book-matched Calacatta fireplace', 'Seats fourteen at the table'],
       },
       {
         name: 'The upper lounge',
-        image: '/images/lounge',
+        image: '/images/amenities/lounge',
         copy: 'Up the stair, a smaller and darker room for after dinner — walnut panelling, a stocked bar, and the only west-facing window in the suite.',
         features: ['Walnut-panelled bar', 'Record library and turntable', 'Private lift landing'],
       },
@@ -114,10 +114,10 @@ export const suites = [
     price: 550,
     sleeps: 4,
     minNights: 2,
-    image: '/images/loft',
+    image: '/images/rooms/loft',
     gallery: [
-      { src: '/images/kitchen', alt: 'The loft kitchen' },
-      { src: '/images/floorplan', alt: 'Floor plan, level 26' },
+      { src: '/images/rooms/kitchen', alt: 'The loft kitchen' },
+      { src: '/images/plans/floorplan', alt: 'Floor plan, level 26' },
     ],
     specs: {
       size: '1,640 sq ft',
@@ -128,13 +128,13 @@ export const suites = [
     rooms: [
       {
         name: 'The double-height living room',
-        image: '/images/loft',
+        image: '/images/rooms/loft',
         copy: 'The original 1998 window frames were kept, blackened and reglazed. Nothing has been added at ceiling height, so the slab and the ductwork are still the ceiling.',
         features: ['Original blackened-steel glazing', 'Mezzanine study above', 'Exposed slab and services'],
       },
       {
         name: 'The galley kitchen',
-        image: '/images/kitchen',
+        image: '/images/rooms/kitchen',
         copy: 'A working kitchen rather than a display one — full-depth counters down one wall, everything within a pace of the sink.',
         features: ['Marble counter run, 4.2 m', 'Gaggenau oven and induction', 'Seats four at the counter'],
       },
@@ -171,10 +171,10 @@ export const suites = [
     price: 680,
     sleeps: 4,
     minNights: 2,
-    image: '/images/kitchen',
+    image: '/images/rooms/kitchen',
     gallery: [
-      { src: '/images/1bed', alt: 'The corner living room' },
-      { src: '/images/floorplan', alt: 'Floor plan, level 24' },
+      { src: '/images/rooms/1bed', alt: 'The corner living room' },
+      { src: '/images/plans/floorplan', alt: 'Floor plan, level 24' },
     ],
     specs: {
       size: '1,420 sq ft',
@@ -185,13 +185,13 @@ export const suites = [
     rooms: [
       {
         name: 'The marble kitchen',
-        image: '/images/kitchen',
+        image: '/images/rooms/kitchen',
         copy: 'Calacatta Viola run as a waterfall island and carried up the splashback in one book-matched sheet. The appliance wall is concealed behind dark oak.',
         features: ['Calacatta Viola waterfall island', 'Full Gaggenau suite', 'Brass Vola pot filler'],
       },
       {
         name: 'The corner living room',
-        image: '/images/1bed',
+        image: '/images/rooms/1bed',
         copy: 'The corner itself is left empty — the seating pulls back from the glass so the two aspects read as one continuous view.',
         features: ['Glazing on two elevations', 'Concealed blinds throughout', 'Desk built into the return'],
       },
@@ -228,10 +228,10 @@ export const suites = [
     price: 350,
     sleeps: 2,
     minNights: 1,
-    image: '/images/1bed',
+    image: '/images/rooms/1bed',
     gallery: [
-      { src: '/images/kitchen', alt: 'The kitchen' },
-      { src: '/images/floorplan', alt: 'Floor plan, level 14' },
+      { src: '/images/rooms/kitchen', alt: 'The kitchen' },
+      { src: '/images/plans/floorplan', alt: 'Floor plan, level 14' },
     ],
     specs: {
       size: '780 sq ft',
@@ -242,13 +242,13 @@ export const suites = [
     rooms: [
       {
         name: 'The living room',
-        image: '/images/1bed',
+        image: '/images/rooms/1bed',
         copy: 'Distinct from the bedroom, which is the whole point of the plan — you can close a door on the day.',
         features: ['Oak parquet in herringbone', 'Blackout linen curtains', 'Sofa converts for a third guest'],
       },
       {
         name: 'The kitchen',
-        image: '/images/kitchen',
+        image: '/images/rooms/kitchen',
         copy: 'Small, fully equipped, and stocked to your list by the concierge before you arrive.',
         features: ['Induction hob and combi oven', 'Full-height fridge', 'Breakfast counter for two'],
       },
@@ -286,10 +286,10 @@ export const suites = [
     price: 220,
     sleeps: 2,
     minNights: 1,
-    image: '/images/studio',
+    image: '/images/rooms/studio',
     gallery: [
-      { src: '/images/kitchen', alt: 'The kitchenette' },
-      { src: '/images/floorplan', alt: 'Floor plan, level 9' },
+      { src: '/images/rooms/kitchen', alt: 'The kitchenette' },
+      { src: '/images/plans/floorplan', alt: 'Floor plan, level 9' },
     ],
     specs: {
       size: '505 sq ft',
@@ -300,13 +300,13 @@ export const suites = [
     rooms: [
       {
         name: 'The studio',
-        image: '/images/studio',
+        image: '/images/rooms/studio',
         copy: 'One room that changes through the day. The bed folds into the storage wall and is made up by housekeeping each morning, so the room is a living room by nine.',
         features: ['Wall bed in white oak', 'Full-height storage wall', 'Desk that folds flat'],
       },
       {
         name: 'The kitchenette',
-        image: '/images/kitchen',
+        image: '/images/rooms/kitchen',
         copy: 'Compact but not token — two zones, a real oven, and a dishwasher behind the cabinetry.',
         features: ['Two-zone induction', 'Concealed dishwasher', 'Fold-away table for four'],
       },
@@ -343,10 +343,10 @@ export const suites = [
     price: 420,
     sleeps: 3,
     minNights: 2,
-    image: '/images/garden',
+    image: '/images/rooms/garden',
     gallery: [
-      { src: '/images/studio', alt: 'The bedroom' },
-      { src: '/images/floorplan', alt: 'Floor plan, level 3' },
+      { src: '/images/rooms/studio', alt: 'The bedroom' },
+      { src: '/images/plans/floorplan', alt: 'Floor plan, level 3' },
     ],
     specs: {
       size: '910 sq ft, plus a 340 sq ft terrace',
@@ -357,13 +357,13 @@ export const suites = [
     rooms: [
       {
         name: 'The terrace room',
-        image: '/images/garden',
+        image: '/images/rooms/garden',
         copy: 'The glass wall slides fully open, so in warm weather the room and the terrace are one space. This is the only suite in the building with private outdoor ground.',
         features: ['Sliding glass wall, 5 m', 'Teak lounge seating for six', 'Outdoor shower on the terrace'],
       },
       {
         name: 'The bedroom',
-        image: '/images/studio',
+        image: '/images/rooms/studio',
         copy: 'Set back from the terrace and planted out on two sides, which makes it the quietest bedroom in the building.',
         features: ['Planting on two elevations', 'Blackout and sheer layers', 'Sleeps a third on the daybed'],
       },
@@ -413,7 +413,7 @@ export const privileges = [
     capacity: 'Desk in the lobby, or message from anywhere',
     // The arrival, not founder.png — that portrait is the architect, and using
     // the same face for the concierge read as a different person each time.
-    image: '/images/hero',
+    image: '/images/building/hero',
     tagline: 'The service layer a rental can’t have',
     description:
       'Cars, reservations, groceries pre-stocked before you arrive, a late checkout arranged while you sleep. One thread, answered by a human on site.',
@@ -425,7 +425,7 @@ export const privileges = [
     access: 'included',
     hours: '06:00 – 22:00',
     capacity: 'Walk-in · 24 loungers',
-    image: '/images/pool',
+    image: '/images/amenities/pool',
     tagline: 'Temperature-controlled, infinity edge',
     description:
       'Float above the city. Towel service and poolside cabanas are complimentary for every booked guest — no day-pass, no resort fee.',
@@ -437,7 +437,7 @@ export const privileges = [
     access: 'included',
     hours: '24 hours',
     capacity: 'Walk-in · 2 yoga studios',
-    image: '/images/fitness',
+    image: '/images/amenities/fitness',
     tagline: 'Technogym floor and studios',
     description:
       'Keep your routine. Full equipment floor, two studios, and towels and water at the door, open the whole time you’re in the building.',
@@ -451,7 +451,7 @@ export const privileges = [
     unit: 'per treatment',
     hours: '09:00 – 21:00',
     capacity: 'By appointment · 4 rooms',
-    image: '/images/garden',
+    image: '/images/rooms/garden',
     tagline: '90-minute treatment, in-building',
     description:
       'Hammam, cold plunge and four treatment rooms on eighteen. Book a slot with your stay and it is held before you land.',
@@ -465,7 +465,7 @@ export const privileges = [
     unit: 'per dinner, for two',
     hours: 'Seatings at 19:00 & 21:00',
     capacity: 'By appointment · 8 seats',
-    image: '/images/kitchen',
+    image: '/images/rooms/kitchen',
     tagline: 'A private chef, in your suite or on 32',
     description:
       'A five-course seating at the counter on thirty-two, or the same menu cooked in your own kitchen. This is the line an Airbnb cannot offer you.',
@@ -477,7 +477,7 @@ export const privileges = [
     access: 'reservation',
     hours: '07:00 – 01:00',
     capacity: 'Reserve for evenings · 40 seats',
-    image: '/images/lounge',
+    image: '/images/amenities/lounge',
     tagline: 'Workspace by day, cocktails by night',
     description:
       'Barista service from seven, cocktails from six, panoramic views the whole time. Free for guests — evenings need a table.',
@@ -500,7 +500,7 @@ export const floorStack = [
     floors: '32',
     label: 'Sky Lounge & Chef’s Table',
     kind: 'privilege',
-    image: '/images/lounge',
+    image: '/images/amenities/lounge',
     note: 'The top plate is given back to guests instead of being sold as two more suites.',
     links: ['lounge', 'chef'],
   },
@@ -509,7 +509,7 @@ export const floorStack = [
     floors: '31',
     label: 'The Crown Penthouse',
     kind: 'suite',
-    image: '/images/penthouse',
+    image: '/images/rooms/penthouse',
     note: 'One suite on its own floor, double height, hosted by the founding household.',
     suiteIds: ['ph3'],
   },
@@ -518,7 +518,7 @@ export const floorStack = [
     floors: '24 – 30',
     label: 'Executive & Loft Suites',
     kind: 'suite',
-    image: '/images/loft',
+    image: '/images/rooms/loft',
     note: 'Corner and double-height plans. Every host on these floors lives here year-round.',
     suiteIds: ['loft-1', 'exec-1'],
   },
@@ -527,7 +527,7 @@ export const floorStack = [
     floors: '18',
     label: 'The Sanctuary Spa',
     kind: 'privilege',
-    image: '/images/garden',
+    image: '/images/rooms/garden',
     note: 'Placed mid-stack so it is a lift ride from any suite, not a trip across town.',
     links: ['spa'],
   },
@@ -536,7 +536,7 @@ export const floorStack = [
     floors: '9 – 17',
     label: 'Urbanite & Studio Suites',
     kind: 'suite',
-    image: '/images/1bed',
+    image: '/images/rooms/1bed',
     note: 'The working floors of the building — most of the resident hosts are here.',
     suiteIds: ['1405', '802'],
   },
@@ -545,7 +545,7 @@ export const floorStack = [
     floors: '8',
     label: 'Infinity Pool & Sun Deck',
     kind: 'privilege',
-    image: '/images/pool',
+    image: '/images/amenities/pool',
     note: 'The whole floor is water and deck. Included, uncapped, no day-pass.',
     links: ['pool'],
   },
@@ -554,7 +554,7 @@ export const floorStack = [
     floors: '7',
     label: 'Wellness & Fitness',
     kind: 'privilege',
-    image: '/images/fitness',
+    image: '/images/amenities/fitness',
     note: 'Open around the clock, because guests arrive on every timezone.',
     links: ['fitness'],
   },
@@ -563,7 +563,7 @@ export const floorStack = [
     floors: '2 – 6',
     label: 'Garden Suites & Winter Garden',
     kind: 'suite',
-    image: '/images/garden',
+    image: '/images/rooms/garden',
     note: 'Terraces onto the planted podium — the only floors with private outdoor space.',
     suiteIds: ['garden-1'],
   },
@@ -572,7 +572,7 @@ export const floorStack = [
     floors: 'G',
     label: 'Arrival, Lobby & Concierge Desk',
     kind: 'arrival',
-    image: '/images/hero',
+    image: '/images/building/hero',
     note: 'Your host meets you at the lift. The desk behind them never closes.',
     links: ['concierge'],
   },

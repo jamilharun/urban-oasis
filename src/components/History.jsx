@@ -11,7 +11,7 @@ export default function History() {
             <div className="relative pr-4 pb-4">
               <div className="absolute top-4 left-4 right-0 bottom-0 border border-condo-accent/30"></div>
               <Plate
-                src="/images/founder"
+                src="/images/people/founder"
                 alt="Elias Sterling, the architect"
                 className="relative w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-1000"
               />

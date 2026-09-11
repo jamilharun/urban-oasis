@@ -16,7 +16,7 @@ export default function Hosts() {
           heading and darkens under the cards, which are translucent. */}
       <div aria-hidden className="absolute inset-0 -z-10">
         <Plate
-          src="/images/lounge"
+          src="/images/amenities/lounge"
           alt=""
           className="w-full h-full object-cover object-center scale-105 blur-[2px] brightness-[0.75] saturate-[0.9]"
         />

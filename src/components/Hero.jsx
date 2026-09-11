@@ -14,7 +14,7 @@ export default function Hero() {
     <section id="home" className="scroll-mt-24 relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Plate
-          src="/images/hero"
+          src="/images/building/hero"
           alt="The Urban Oasis tower at dusk"
           loading="eager"
           className="hero-plate w-full h-full object-cover object-center"

@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Sources are consumed by `npm run images`; only the graded output is committed.
+images-src/

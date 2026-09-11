@@ -15,7 +15,7 @@ export default function Footer() {
           competing with the contact details. */}
       <div aria-hidden className="absolute inset-0 -z-10">
         <Plate
-          src="/images/hero"
+          src="/images/building/hero"
           alt=""
           className="w-full h-full object-cover object-top scale-105 blur-[1.5px] brightness-[0.8] saturate-[0.9]"
         />

@@ -3,7 +3,7 @@ import { lqip } from '../data/lqip';
 /**
  * Every photograph on the site goes through here.
  *
- * `src` is a base path with no extension — '/images/lounge' — and this serves
+ * `src` is a base path with no extension — '/images/amenities/lounge' — and this serves
  * AVIF first, WebP second. The plates are graded to one target so the set
  * reads as a single shoot rather than eleven stock photos.
  *
