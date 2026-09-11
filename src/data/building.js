@@ -171,9 +171,9 @@ export const suites = [
     price: 680,
     sleeps: 4,
     minNights: 2,
-    image: '/images/rooms/kitchen',
+    image: '/images/rooms/executive',
     gallery: [
-      { src: '/images/rooms/1bed', alt: 'The corner living room' },
+      { src: '/images/rooms/kitchen', alt: 'The marble kitchen' },
       { src: '/images/plans/floorplan', alt: 'Floor plan, level 24' },
     ],
     specs: {
@@ -191,7 +191,7 @@ export const suites = [
       },
       {
         name: 'The corner living room',
-        image: '/images/rooms/1bed',
+        image: '/images/rooms/executive',
         copy: 'The corner itself is left empty — the seating pulls back from the glass so the two aspects read as one continuous view.',
         features: ['Glazing on two elevations', 'Concealed blinds throughout', 'Desk built into the return'],
       },
