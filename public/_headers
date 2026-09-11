@@ -1,0 +1,19 @@
+# Workers static assets default every response to
+# `public, max-age=0, must-revalidate`, which is right for the HTML shell and
+# needlessly conservative for everything else.
+
+# Vite fingerprints these, so the filename changes whenever the contents do.
+# Safe to cache forever.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Plates keep stable filenames across regeneration — `npm run images` writes
+# rooms/loft.avif again rather than rooms/loft-<hash>.avif — so these must not
+# be immutable, or a re-graded image would be stuck in browser caches.
+/images/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# The shell carries the current asset hashes, so it has to be revalidated or a
+# returning visitor loads a stale bundle.
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate

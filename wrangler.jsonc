@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "urban-oasis",
+  "compatibility_date": "2026-09-11",
+
+  // Assets-only Worker: there is no `main`, because nothing here needs to run
+  // server-side. Cloudflare serves the built files directly.
+  //
+  // `not_found_handling: single-page-application` is what makes the React
+  // Router deep links work — a request for /suite/loft-1/reserve matches no
+  // file on disk, so the edge returns /index.html with a 200 and the router
+  // takes over in the browser. This replaces the public/_redirects file, which
+  // was a Cloudflare Pages mechanism and does nothing on Workers.
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  },
+
+  "observability": { "enabled": true }
+}

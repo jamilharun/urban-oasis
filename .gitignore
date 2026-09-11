@@ -25,3 +25,6 @@ dist-ssr
 
 # Sources are consumed by `npm run images`; only the graded output is committed.
 images-src/
+
+# Wrangler local state
+.wrangler/
