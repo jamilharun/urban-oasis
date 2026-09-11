@@ -13,10 +13,13 @@ export default function Footer() {
           <div>
             <h4 className="text-balance font-display text-condo-accent tracking-widest uppercase text-sm font-semibold mb-6">Contact</h4>
             <ul className="space-y-4 text-gray-400 font-light">
-              <li>123 Luxury Avenue</li>
-              <li>Metropolis, NY 10001</li>
-              <li>+1 (555) 123-4567</li>
-              <li>inquiries@urbanoasis.com</li>
+              {/* Deliberately unmistakable placeholders. example.com is reserved
+                  by RFC 2606 for exactly this, so it cannot collide with a real
+                  domain the way urbanoasis.com might. */}
+              <li>123 Example Street</li>
+              <li>Anytown, 12345</li>
+              <li>1234567890</li>
+              <li>abcd@example.com</li>
             </ul>
           </div>
           
