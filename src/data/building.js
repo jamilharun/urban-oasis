@@ -58,8 +58,9 @@ export const suites = [
     minNights: 3,
     image: '/images/rooms/penthouse',
     gallery: [
-      { src: '/images/amenities/lounge', alt: 'The penthouse entertaining level' },
-      { src: '/images/plans/floorplan', alt: 'Floor plan, level 31' },
+      { src: '/images/rooms/penthouse-bathroom', alt: 'The master bathroom' },
+      { src: '/images/rooms/penthouse-dining', alt: 'The dining area' },
+      { src: '/images/amenities/lounge', alt: 'The penthouse lounge' },
     ],
     specs: {
       size: '3,180 sq ft',
@@ -116,8 +117,9 @@ export const suites = [
     minNights: 2,
     image: '/images/rooms/loft',
     gallery: [
-      { src: '/images/rooms/kitchen', alt: 'The loft kitchen' },
-      { src: '/images/plans/floorplan', alt: 'Floor plan, level 26' },
+      { src: '/images/rooms/loft-bedroom', alt: 'The master bedroom' },
+      { src: '/images/rooms/loft-bathroom', alt: 'The master bathroom' },
+      { src: '/images/rooms/loft-kitchen', alt: 'The loft kitchen' },
     ],
     specs: {
       size: '1,640 sq ft',
@@ -134,7 +136,7 @@ export const suites = [
       },
       {
         name: 'The galley kitchen',
-        image: '/images/rooms/kitchen',
+        image: '/images/rooms/loft-kitchen',
         copy: 'A working kitchen rather than a display one — full-depth counters down one wall, everything within a pace of the sink.',
         features: ['Marble counter run, 4.2 m', 'Gaggenau oven and induction', 'Seats four at the counter'],
       },
@@ -173,8 +175,8 @@ export const suites = [
     minNights: 2,
     image: '/images/rooms/executive',
     gallery: [
+      { src: '/images/rooms/executive-bedroom', alt: 'The master bedroom' },
       { src: '/images/rooms/kitchen', alt: 'The marble kitchen' },
-      { src: '/images/plans/floorplan', alt: 'Floor plan, level 24' },
     ],
     specs: {
       size: '1,420 sq ft',
@@ -184,10 +186,10 @@ export const suites = [
     },
     rooms: [
       {
-        name: 'The marble kitchen',
-        image: '/images/rooms/kitchen',
-        copy: 'Calacatta Viola run as a waterfall island and carried up the splashback in one book-matched sheet. The appliance wall is concealed behind dark oak.',
-        features: ['Calacatta Viola waterfall island', 'Full Gaggenau suite', 'Brass Vola pot filler'],
+        name: 'The master bedroom',
+        image: '/images/rooms/executive-bedroom',
+        copy: 'A true corner suite bedroom featuring panoramic wrap-around views of the city skyline, wrapped in dark wood paneling and evening warmth.',
+        features: ['Panoramic corner views', 'Super-king bed', 'Motorised blackout blinds'],
       },
       {
         name: 'The corner living room',
@@ -230,8 +232,8 @@ export const suites = [
     minNights: 1,
     image: '/images/rooms/1bed',
     gallery: [
+      { src: '/images/rooms/1bed', alt: 'The living area' },
       { src: '/images/rooms/kitchen', alt: 'The kitchen' },
-      { src: '/images/plans/floorplan', alt: 'Floor plan, level 14' },
     ],
     specs: {
       size: '780 sq ft',
@@ -247,10 +249,10 @@ export const suites = [
         features: ['Oak parquet in herringbone', 'Blackout linen curtains', 'Sofa converts for a third guest'],
       },
       {
-        name: 'The kitchen',
-        image: '/images/rooms/kitchen',
-        copy: 'Small, fully equipped, and stocked to your list by the concierge before you arrive.',
-        features: ['Induction hob and combi oven', 'Full-height fridge', 'Breakfast counter for two'],
+        name: 'The bedroom',
+        image: '/images/rooms/studio',
+        copy: 'A serene and minimalist bedroom space with a view, fully equipped with blackout linen curtains and warm ambient lighting.',
+        features: ['Queen-sized bed', 'Full-height storage wall', 'Blackout linen curtains'],
       },
     ],
     furnishings: [
@@ -288,8 +290,8 @@ export const suites = [
     minNights: 1,
     image: '/images/rooms/studio',
     gallery: [
+      { src: '/images/rooms/studio', alt: 'The living area' },
       { src: '/images/rooms/kitchen', alt: 'The kitchenette' },
-      { src: '/images/plans/floorplan', alt: 'Floor plan, level 9' },
     ],
     specs: {
       size: '505 sq ft',
@@ -305,10 +307,10 @@ export const suites = [
         features: ['Wall bed in white oak', 'Full-height storage wall', 'Desk that folds flat'],
       },
       {
-        name: 'The kitchenette',
-        image: '/images/rooms/kitchen',
-        copy: 'Compact but not token — two zones, a real oven, and a dishwasher behind the cabinetry.',
-        features: ['Two-zone induction', 'Concealed dishwasher', 'Fold-away table for four'],
+        name: 'The living area',
+        image: '/images/rooms/1bed',
+        copy: 'A cozy but premium urban living area complete with modern Scandinavian furniture and bright morning light.',
+        features: ['Scandinavian seating', 'City views', 'Oak finishes'],
       },
     ],
     furnishings: [
@@ -345,8 +347,8 @@ export const suites = [
     minNights: 2,
     image: '/images/rooms/garden',
     gallery: [
+      { src: '/images/rooms/garden', alt: 'The terrace' },
       { src: '/images/rooms/studio', alt: 'The bedroom' },
-      { src: '/images/plans/floorplan', alt: 'Floor plan, level 3' },
     ],
     specs: {
       size: '910 sq ft, plus a 340 sq ft terrace',

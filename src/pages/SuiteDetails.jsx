@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { createPortal } from 'react-dom';
 import {
-  ArrowLeft, ArrowRight, Check, Star, Maximize, MoveVertical, Bath, Compass, Sofa, Droplets,
+  ArrowLeft, ArrowRight, Check, Star, Maximize, MoveVertical, Bath, Compass, Sofa, Droplets, X
 } from 'lucide-react';
 import { suites, standingPrivileges, reviewSummary } from '../data/building';
 import { currency } from '../lib/format';
@@ -10,6 +12,18 @@ import Plate from '../components/Plate';
 
 export default function SuiteDetails() {
   const { id } = useParams();
+  const [lightbox, setLightbox] = useState(null);
+
+  useEffect(() => {
+    if (lightbox) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [lightbox]);
   const suite = suites.find((s) => s.id === id);
 
   if (!suite) return <SuiteNotFound id={id} />;
@@ -152,20 +166,52 @@ export default function SuiteDetails() {
           </div>
         </section>
 
-        {/* ---- Plan ---------------------------------------------------- */}
+        {/* ---- Photo gallery ------------------------------------------- */}
         <section className="mb-20">
-          <h2 className="text-balance text-3xl font-display font-light mb-8">The plan</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {suite.gallery.map((shot) => (
-              <Plate
-                key={shot.src}
-                src={shot.src}
-                alt={shot.alt}
-                className="w-full h-72 object-cover rounded-card border border-white/10"
-              />
+          <h2 className="text-balance text-3xl font-display font-light mb-8">Photo gallery</h2>
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+            {suite.gallery.map((shot, idx) => (
+              <button 
+                key={idx} 
+                onClick={() => setLightbox(shot)}
+                className="w-full block break-inside-avoid cursor-zoom-in group outline-none"
+              >
+                <Plate
+                  src={shot.src}
+                  alt={shot.alt}
+                  className="w-full h-auto object-cover rounded-card border border-white/10 group-hover:border-condo-accent group-focus-visible:ring-2 group-focus-visible:ring-condo-accent transition-colors"
+                />
+              </button>
             ))}
           </div>
         </section>
+
+        {/* ---- Lightbox Overlay ---------------------------------------- */}
+        {lightbox && createPortal(
+          <div 
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-sm" 
+            onClick={() => setLightbox(null)}
+          >
+            <button 
+              onClick={() => setLightbox(null)}
+              className="absolute top-6 right-6 p-2 text-white/70 hover:text-white transition-colors z-10"
+              aria-label="Close lightbox"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <picture className="w-full h-full flex items-center justify-center">
+              <source srcSet={`${lightbox.src}.avif`} type="image/avif" />
+              <source srcSet={`${lightbox.src}.webp`} type="image/webp" />
+              <img
+                src={`${lightbox.src}.webp`}
+                alt={lightbox.alt}
+                className="max-w-full max-h-full object-contain"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </picture>
+          </div>,
+          document.body
+        )}
 
         {/* ---- Reviews for THIS suite ---------------------------------- */}
         {count > 0 && (
