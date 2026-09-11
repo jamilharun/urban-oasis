@@ -1,6 +1,27 @@
+import Plate from './Plate';
+
 export default function Footer() {
   return (
-    <footer id="contact" className="scroll-mt-24 relative bg-black/25 pt-20 pb-10 border-t border-white/10 text-white">
+    /* `isolate` matters: it gives the footer its own stacking context, so the
+       -z-10 backdrop sits behind the footer's text but still above the page
+       ground, whose three layers are fixed at z-index -1 to -3. */
+    <footer
+      id="contact"
+      className="scroll-mt-24 relative isolate overflow-hidden pt-24 pb-10 border-t border-white/10 text-white"
+    >
+      {/* The building again, to close on what the page opened with. Cropped to
+          the top so the podium — and the other brands on its signage — stay out
+          of frame, then buried under a scrim: this is atmosphere, not a photo
+          competing with the contact details. */}
+      <div aria-hidden className="absolute inset-0 -z-10">
+        <Plate
+          src="/images/hero"
+          alt=""
+          className="w-full h-full object-cover object-top scale-105 blur-[1.5px] brightness-[0.8] saturate-[0.9]"
+        />
+        <div className="absolute inset-0 bg-condo-dark/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-condo-dark via-condo-dark/40 to-condo-dark/85" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 lg:col-span-2">
