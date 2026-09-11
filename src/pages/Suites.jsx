@@ -35,14 +35,14 @@ export default function Suites() {
   const hidden = results.length - shown.length;
 
   return (
-    <main id="main" className="scroll-mt-24 pb-24 pt-28 text-white">
+    <main id="main" className="scroll-mt-24 pb-24 pt-28 text-ink">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-10 max-w-measure">
-          <p className="text-condo-accent eyebrow mb-4">The building</p>
+          <p className="text-accent eyebrow mb-4">The building</p>
           <h1 className="text-balance text-display-sm md:text-display-lg font-display font-light mb-5">
             Every suite
           </h1>
-          <p className="text-pretty text-gray-400 font-light">
+          <p className="text-pretty text-ink-soft font-light">
             The whole building, {currency(cheapest)} to {currency(dearest)} a night. Change your
             dates here and the list answers — every suite shows what it would cost for your stay,
             and the ones that cannot take it say why.
@@ -55,16 +55,16 @@ export default function Suites() {
         </section>
 
         {/* Controls: sort, and whether to show what you cannot book. */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-10 pb-6 border-b border-white/10">
-          <p className="text-sm text-gray-400">
-            <span className="text-white font-medium">{availableCount}</span> of {results.length} free
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-10 pb-6 border-b border-line">
+          <p className="text-sm text-ink-soft">
+            <span className="text-ink font-medium">{availableCount}</span> of {results.length} free
             for{' '}
-            <span className="text-white font-medium">
+            <span className="text-ink font-medium">
               {formatDate(checkIn)} → {formatDate(checkOut)}
             </span>{' '}
             · {nights} {nights === 1 ? 'night' : 'nights'} · {guests}{' '}
             {guests === 1 ? 'guest' : 'guests'}
-            {hidden > 0 && <span className="text-gray-500"> · {hidden} hidden</span>}
+            {hidden > 0 && <span className="text-ink-faint"> · {hidden} hidden</span>}
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -73,29 +73,29 @@ export default function Suites() {
               aria-pressed={availableOnly}
               className={`inline-flex items-center gap-2 rounded-control border px-4 py-2 text-xs uppercase tracking-widest transition-colors ${
                 availableOnly
-                  ? 'border-condo-accent bg-condo-accent/15 text-condo-accent'
-                  : 'border-white/15 text-gray-300 hover:text-white hover:border-white/30'
+                  ? 'border-accent bg-accent-fill/25 text-accent'
+                  : 'border-line text-ink-soft hover:text-ink hover:border-white/30'
               }`}
             >
               <Check className={`w-3.5 h-3.5 ${availableOnly ? '' : 'opacity-30'}`} />
               Available only
             </button>
 
-            <label className="relative inline-flex items-center gap-2 rounded-control border border-white/15 pl-4 pr-8 py-2">
-              <ArrowDownUp className="w-3.5 h-3.5 text-condo-accent" />
+            <label className="relative inline-flex items-center gap-2 rounded-control border border-line pl-4 pr-8 py-2">
+              <ArrowDownUp className="w-3.5 h-3.5 text-accent" />
               <span className="sr-only">Sort by</span>
               <select
                 value={sortId}
                 onChange={(e) => setSortId(e.target.value)}
-                className="bg-transparent text-xs uppercase tracking-widest text-gray-300 appearance-none cursor-pointer focus-visible:text-white"
+                className="bg-transparent text-xs uppercase tracking-widest text-ink-soft appearance-none cursor-pointer focus-visible:text-ink"
               >
                 {SORTS.map((s) => (
-                  <option key={s.id} value={s.id} className="bg-condo-dark tracking-normal">
+                  <option key={s.id} value={s.id} className="bg-surface tracking-normal">
                     {s.label}
                   </option>
                 ))}
               </select>
-              <span aria-hidden className="pointer-events-none absolute right-3 text-condo-accent text-xs">▾</span>
+              <span aria-hidden className="pointer-events-none absolute right-3 text-accent text-xs">▾</span>
             </label>
           </div>
         </div>
@@ -107,9 +107,9 @@ export default function Suites() {
             ))}
           </div>
         ) : (
-          <div className="rounded-card border border-white/10 bg-white/5 p-10 text-center">
+          <div className="rounded-card border border-line bg-panel p-10 text-center">
             <p className="text-xl font-display font-light mb-2">Nothing free for these dates</p>
-            <p className="text-pretty text-gray-400 font-light mb-6 max-w-measure mx-auto">
+            <p className="text-pretty text-ink-soft font-light mb-6 max-w-measure mx-auto">
               {formatDate(checkIn)} → {formatDate(checkOut)} at {guests}{' '}
               {guests === 1 ? 'guest' : 'guests'} leaves nothing bookable. Shift your dates above,
               or turn off the filter to see what the building holds.
@@ -117,7 +117,7 @@ export default function Suites() {
             {availableOnly && (
               <button
                 onClick={() => setAvailableOnly(false)}
-                className="eyebrow text-condo-accent hover:text-white transition-colors"
+                className="eyebrow text-accent hover:text-ink transition-colors"
               >
                 Show them all anyway →
               </button>

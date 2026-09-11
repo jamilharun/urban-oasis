@@ -11,42 +11,42 @@ export default function SearchFields() {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <label className="rounded-card border border-white/10 bg-white/5 px-5 py-4 cursor-pointer">
-        <span className="block text-xs uppercase tracking-widest text-condo-accent mb-2">Check in</span>
+      <label className="rounded-card border border-line bg-panel px-5 py-4 cursor-pointer">
+        <span className="block text-xs uppercase tracking-widest text-accent mb-2">Check in</span>
         <input
           type="date"
           value={checkIn}
           min={todayISO}
           onChange={(e) => setField('checkIn', e.target.value)}
-          className="w-full bg-transparent text-white cursor-pointer [color-scheme:dark]"
+          className="w-full bg-transparent text-ink cursor-pointer [color-scheme:dark]"
         />
       </label>
 
-      <label className="rounded-card border border-white/10 bg-white/5 px-5 py-4 cursor-pointer">
-        <span className="block text-xs uppercase tracking-widest text-condo-accent mb-2">Check out</span>
+      <label className="rounded-card border border-line bg-panel px-5 py-4 cursor-pointer">
+        <span className="block text-xs uppercase tracking-widest text-accent mb-2">Check out</span>
         <input
           type="date"
           value={checkOut}
           min={checkIn || todayISO}
           onChange={(e) => setField('checkOut', e.target.value)}
-          className="w-full bg-transparent text-white cursor-pointer [color-scheme:dark]"
+          className="w-full bg-transparent text-ink cursor-pointer [color-scheme:dark]"
         />
       </label>
 
-      <label className="rounded-card border border-white/10 bg-white/5 px-5 py-4 cursor-pointer relative">
-        <span className="block text-xs uppercase tracking-widest text-condo-accent mb-2">Guests</span>
+      <label className="rounded-card border border-line bg-panel px-5 py-4 cursor-pointer relative">
+        <span className="block text-xs uppercase tracking-widest text-accent mb-2">Guests</span>
         <select
           value={guests}
           onChange={(e) => setField('guests', Number(e.target.value))}
-          className="w-full bg-transparent text-white cursor-pointer appearance-none pr-6"
+          className="w-full bg-transparent text-ink cursor-pointer appearance-none pr-6"
         >
           {[1, 2, 3, 4, 5, 6].map((n) => (
-            <option key={n} value={n} className="bg-condo-dark">
+            <option key={n} value={n} className="bg-surface">
               {n} {n === 1 ? 'guest' : 'guests'}
             </option>
           ))}
         </select>
-        <span aria-hidden className="pointer-events-none absolute right-5 bottom-5 text-condo-accent text-xs">▾</span>
+        <span aria-hidden className="pointer-events-none absolute right-5 bottom-5 text-accent text-xs">▾</span>
       </label>
     </div>
   );

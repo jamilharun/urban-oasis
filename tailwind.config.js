@@ -9,11 +9,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        'condo-dark': '#0f172a',   // Slate 900
-        'condo-panel': '#161f33',  // one step up, for cards that lift off the ground
-        'condo-light': '#f8fafc',  // Slate 50
-        'condo-accent': '#c0a062', // brass — for dark backgrounds only
-        'condo-ink': '#7a6224',    // brass darkened to 5.7:1 on condo-light
+        // Warm daylight. Every value below was solved against the 4.5:1 text
+        // threshold rather than picked by eye — the obvious mid-tone brass and
+        // terracotta both land near 3.4:1 on cream and fail.
+        surface: '#faf7f2',        // page ground, warm off-white
+        'surface-sunk': '#f2ede4', // banded sections that need to recede
+        panel: '#ffffff',          // cards lift with shadow, not tint
+        line: '#e6e0d6',           // hairlines
+
+        ink: '#2a2320',            // 14.45:1 on surface
+        'ink-soft': '#5c5149',     //  7.20:1
+        'ink-faint': '#7c7066',    //  4.50:1 — the floor, do not lighten
+
+        accent: '#866730',         // brass for TEXT. Solved against surface-sunk,
+                                   // the darkest ground it lands on: 4.51:1 there,
+                                   // 4.92:1 on surface, 5.25:1 on panel.
+        'accent-fill': '#c0a062',  // brass for BUTTON FILLS, ink on it = 6.21:1
+        clay: '#9e5b33',           // terracotta, 4.50:1 on surface-sunk
+
+        // Photo-backed bands — hero, hosts, footer — keep light text over a
+        // dark scrim, because cream text on a photograph cannot be made legible.
+        'dark-ground': '#1a1512',
+        'dark-panel': '#241f1b',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -57,16 +74,18 @@ export default {
 
       addBase({
         body: {
-          backgroundColor: '#0b1220',
-          color: theme('colors.condo-light'),
+          backgroundColor: theme('colors.surface'),
+          color: theme('colors.ink'),
           fontFamily: theme('fontFamily.sans'),
           '-webkit-font-smoothing': 'antialiased',
         },
 
         // Brass on the dark ground; darkened on the light section, where the
         // brass itself is only 2.4:1.
-        ':root': { '--focus-ring': theme('colors.condo-accent') },
-        '.bg-condo-light': { '--focus-ring': theme('colors.condo-ink') },
+        ':root': { '--focus-ring': theme('colors.accent') },
+        // Over a dark photo band the darkened brass disappears, so the ring
+        // brightens back to the fill brass there.
+        '.on-dark': { '--focus-ring': theme('colors.accent-fill') },
 
         // Every interactive element sets outline-none somewhere; this is the
         // replacement, applied once rather than on each of them.
@@ -106,10 +125,10 @@ export default {
         '.ground-ambient': {
           zIndex: '-3',
           background: [
-            'radial-gradient(75rem 45rem at 8% -8%, rgba(192,160,98,0.13), transparent 62%)',
-            'radial-gradient(60rem 45rem at 102% 28%, rgba(192,160,98,0.08), transparent 58%)',
-            'radial-gradient(70rem 40rem at 50% 108%, rgba(122,152,196,0.10), transparent 62%)',
-            'linear-gradient(180deg, #0b1220 0%, #101a2e 45%, #0a111f 100%)',
+            'radial-gradient(75rem 45rem at 8% -8%, rgba(192,160,98,0.20), transparent 62%)',
+            'radial-gradient(60rem 45rem at 102% 28%, rgba(166,96,54,0.10), transparent 58%)',
+            'radial-gradient(70rem 40rem at 50% 108%, rgba(203,186,150,0.22), transparent 62%)',
+            'linear-gradient(180deg, #fbf9f5 0%, #f7f2e9 45%, #f6f1e7 100%)',
           ].join(', '),
         },
         // Scrolls with the page: hairlines every 88px standing in for the
@@ -122,15 +141,17 @@ export default {
           bottom: 'auto',
           minHeight: '100%',
           backgroundImage:
-            'repeating-linear-gradient(180deg, rgba(255,255,255,0.032) 0, rgba(255,255,255,0.032) 1px, transparent 1px, transparent 88px)',
+            'repeating-linear-gradient(180deg, rgba(42,35,32,0.045) 0, rgba(42,35,32,0.045) 1px, transparent 1px, transparent 88px)',
           maskImage:
             'linear-gradient(180deg, transparent, #000 12rem, #000 calc(100% - 12rem), transparent)',
         },
         // Film grain. What stops a dark UI reading as flat plastic.
         '.ground-grain': {
           zIndex: '-1',
-          opacity: '0.32',
-          mixBlendMode: 'overlay',
+          // multiply, not overlay: on a light ground overlay lifts the grain
+          // into visible speckle instead of settling into the paper.
+          opacity: '0.16',
+          mixBlendMode: 'multiply',
           backgroundImage: GRAIN,
         },
 
@@ -143,7 +164,7 @@ export default {
           width: '55rem',
           height: '34rem',
           pointerEvents: 'none',
-          background: 'radial-gradient(closest-side, rgba(192,160,98,0.11), transparent 70%)',
+          background: 'radial-gradient(closest-side, rgba(192,160,98,0.28), transparent 70%)',
         },
       });
     },

@@ -20,13 +20,13 @@ export default function Hosts() {
           alt=""
           className="w-full h-full object-cover object-center scale-105 blur-[2px] brightness-[0.75] saturate-[0.9]"
         />
-        <div className="absolute inset-0 bg-condo-dark/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-condo-dark/35 via-condo-dark/70 to-condo-dark/90" />
+        <div className="absolute inset-0 bg-dark-ground/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-ground/35 via-dark-ground/70 to-dark-ground/90" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="reveal lg:w-1/3">
-            <p className="text-condo-accent eyebrow mb-4">
+            <p className="text-accent-fill eyebrow mb-4">
               Resident-hosted
             </p>
             <h2 className="text-balance text-display-sm md:text-display-md font-display font-light mb-6">

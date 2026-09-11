@@ -15,14 +15,14 @@ function App() {
     <BookingProvider>
       <BrowserRouter>
         <ScrollManager />
-        <div className="relative min-h-screen font-sans selection:bg-condo-accent selection:text-condo-dark">
+        <div className="relative min-h-screen font-sans selection:bg-accent-fill selection:text-ink">
           {/* The ground — see index.css. Fixed layers, so scrolling never repaints them. */}
           <div aria-hidden className="ground-ambient" />
           <div aria-hidden className="ground-structure" />
           <div aria-hidden className="ground-grain" />
           <a
             href="#main"
-            className="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-4 focus:left-4 focus:bg-condo-accent focus:text-condo-dark focus:px-4 focus:py-2 focus:rounded-control"
+            className="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-4 focus:left-4 focus:bg-accent-fill focus:text-ink focus:px-4 focus:py-2 focus:rounded-control"
           >
             Skip to main content
           </a>

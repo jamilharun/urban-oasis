@@ -16,29 +16,29 @@ export default function AvailableSuites() {
   const preview = results.slice(0, 3);
 
   return (
-    <section id="suites" className="scroll-mt-24 pt-24 pb-32 text-white relative">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-condo-accent/35 to-transparent"></div>
+    <section id="suites" className="scroll-mt-24 pt-24 pb-32 text-ink relative">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/35 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="reveal mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
           <div className="max-w-measure">
-            <p className="text-condo-accent eyebrow mb-4">Step one</p>
+            <p className="text-accent eyebrow mb-4">Step one</p>
             <h2 className="text-balance text-display-sm md:text-display-md font-display font-light mb-4">
               Pick your suite
             </h2>
-            <p className="text-pretty text-gray-400 font-light">
+            <p className="text-pretty text-ink-soft font-light">
               Six suites, each hosted by someone who lives in the building. Pick one, then attach
               the privileges you want — the stay is assembled, not listed.
             </p>
           </div>
 
           <div className="shrink-0 lg:text-right">
-            <p className="text-xs text-gray-400 mb-3">
+            <p className="text-xs text-ink-soft mb-3">
               {preview.length} of {results.length} shown · {availableCount} free for your dates
             </p>
             <Link
               to="/suites"
-              className="inline-flex items-center gap-2 bg-condo-accent text-condo-dark px-6 py-3 rounded-control font-semibold tracking-widest uppercase text-sm hover:bg-[#d4b878] transition-colors"
+              className="inline-flex items-center gap-2 bg-accent-fill text-ink px-6 py-3 rounded-control font-semibold tracking-widest uppercase text-sm hover:bg-accent-fill/85 transition-colors"
             >
               See all suites <ArrowRight className="w-4 h-4" />
             </Link>

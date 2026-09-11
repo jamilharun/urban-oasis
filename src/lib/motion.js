@@ -81,19 +81,6 @@ export function useSiteMotion(routeKey) {
           });
       });
 
-      // --- The bar finds its ground as you leave the hero. -----------------
-      const nav = document.querySelector('[data-nav-over-hero]');
-      if (nav) {
-        gsap.fromTo(nav,
-          { backgroundColor: 'rgba(15,23,42,0)', borderBottomColor: 'rgba(255,255,255,0)', backdropFilter: 'blur(0px)' },
-          {
-            backgroundColor: 'rgba(15,23,42,0.72)',
-            borderBottomColor: 'rgba(255,255,255,0.1)',
-            backdropFilter: 'blur(12px)',
-            ease: 'none',
-            scrollTrigger: { start: 0, end: 140, scrub: true },
-          });
-      }
     });
 
     return () => mm.revert();

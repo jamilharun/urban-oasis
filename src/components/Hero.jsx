@@ -19,12 +19,12 @@ export default function Hero() {
           loading="eager"
           className="hero-plate w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-condo-dark/80 via-condo-dark/40 to-condo-dark"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-ground/85 via-dark-ground/65 to-dark-ground"></div>
       </div>
 
       <div className="relative z-10 w-full px-4 max-w-5xl mx-auto mt-20">
         <div className="text-center mb-12">
-          <p data-intro className="text-condo-accent eyebrow mb-4">
+          <p data-intro className="text-accent-fill eyebrow mb-4">
             One building · Thirty-two floors
           </p>
           <h1 data-intro className="text-balance text-display-sm md:text-display-xl font-light text-white mb-8 md:mb-10">
@@ -36,50 +36,50 @@ export default function Hero() {
           </p>
         </div>
 
-        <div data-intro className="bg-black/40 backdrop-blur-md rounded-card p-4 md:p-2 border border-white/20 shadow-2xl relative z-20">
+        <div data-intro className="bg-panel/95 backdrop-blur-md rounded-card p-4 md:p-2 border border-line shadow-2xl relative z-20">
           <div className="flex flex-col md:flex-row gap-4 md:items-stretch">
-            <label className="flex-1 px-4 py-2 border-b md:border-b-0 md:border-r border-white/10 cursor-pointer">
-              <span className="block text-xs uppercase tracking-widest text-condo-accent mb-1">Check In</span>
+            <label className="flex-1 px-4 py-2 border-b md:border-b-0 md:border-r border-line cursor-pointer">
+              <span className="block text-xs uppercase tracking-widest text-accent mb-1">Check In</span>
               <input
                 type="date"
                 value={checkIn}
                 min={todayISO}
                 onChange={(e) => setField('checkIn', e.target.value)}
-                className="w-full bg-transparent text-white cursor-pointer [color-scheme:dark]"
+                className="w-full bg-transparent text-ink cursor-pointer"
               />
             </label>
 
-            <label className="flex-1 px-4 py-2 border-b md:border-b-0 md:border-r border-white/10 cursor-pointer">
-              <span className="block text-xs uppercase tracking-widest text-condo-accent mb-1">Check Out</span>
+            <label className="flex-1 px-4 py-2 border-b md:border-b-0 md:border-r border-line cursor-pointer">
+              <span className="block text-xs uppercase tracking-widest text-accent mb-1">Check Out</span>
               <input
                 type="date"
                 value={checkOut}
                 min={checkIn || todayISO}
                 onChange={(e) => setField('checkOut', e.target.value)}
-                className="w-full bg-transparent text-white cursor-pointer [color-scheme:dark]"
+                className="w-full bg-transparent text-ink cursor-pointer"
               />
             </label>
 
             <label className="flex-1 px-4 py-2 relative cursor-pointer">
-              <span className="block text-xs uppercase tracking-widest text-condo-accent mb-1">Guests</span>
+              <span className="block text-xs uppercase tracking-widest text-accent mb-1">Guests</span>
               <select
                 value={guests}
                 onChange={(e) => setField('guests', Number(e.target.value))}
-                className="w-full bg-transparent text-white cursor-pointer appearance-none pr-6"
+                className="w-full bg-transparent text-ink cursor-pointer appearance-none pr-6"
               >
                 {[1, 2, 3, 4, 5, 6].map((n) => (
-                  <option key={n} value={n} className="bg-condo-dark">
+                  <option key={n} value={n} className="bg-dark-ground">
                     {n} {n === 1 ? 'Guest' : 'Guests'}
                   </option>
                 ))}
               </select>
               {/* appearance-none removed the chevron; without one the select read as static text */}
-              <span aria-hidden className="pointer-events-none absolute right-4 bottom-3 text-condo-accent text-xs">▾</span>
+              <span aria-hidden className="pointer-events-none absolute right-4 bottom-3 text-accent text-xs">▾</span>
             </label>
 
             <button
               onClick={goToSuites}
-              className="flex items-center justify-center gap-2 bg-condo-accent text-condo-dark px-8 py-4 rounded-control font-semibold tracking-widest uppercase hover:bg-[#d4b878] transition-colors"
+              className="flex items-center justify-center gap-2 bg-accent-fill text-ink px-8 py-4 rounded-control font-semibold tracking-widest uppercase hover:bg-accent-fill/85 transition-colors"
             >
               <Search className="w-4 h-4" />
               Search
