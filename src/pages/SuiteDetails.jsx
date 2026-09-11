@@ -72,7 +72,7 @@ export default function SuiteDetails() {
             </p>
             <Link
               to={`/suite/${suite.id}/reserve`}
-              className="mt-4 inline-flex items-center gap-2 bg-accent-fill text-ink px-7 py-3.5 rounded-control font-semibold tracking-widest uppercase text-sm hover:bg-accent-fill/85 transition-colors"
+              className="mt-4 inline-flex items-center gap-2 bg-cta text-white px-7 py-3.5 rounded-control font-bold tracking-widest uppercase text-sm hover:bg-cta-hover transition-colors"
             >
               Check dates & reserve <ArrowRight className="w-4 h-4" />
             </Link>
@@ -311,7 +311,7 @@ export default function SuiteDetails() {
           </div>
           <Link
             to={`/suite/${suite.id}/reserve`}
-            className="shrink-0 inline-flex items-center gap-2 bg-accent-fill text-ink px-7 py-3.5 rounded-control font-semibold tracking-widest uppercase text-sm hover:bg-accent-fill/85 transition-colors"
+            className="shrink-0 inline-flex items-center gap-2 bg-cta text-white px-7 py-3.5 rounded-control font-bold tracking-widest uppercase text-sm hover:bg-cta-hover transition-colors"
           >
             Continue <ArrowRight className="w-4 h-4" />
           </Link>

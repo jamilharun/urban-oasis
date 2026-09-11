@@ -208,9 +208,9 @@ export default function Reserve() {
 
               <button
                 disabled={!bookable}
-                className={`w-full mt-6 py-4 font-semibold tracking-widest uppercase rounded-control transition-colors ${
+                className={`w-full mt-6 py-4 font-bold tracking-widest uppercase rounded-control transition-colors ${
                   bookable
-                    ? 'bg-accent-fill text-ink hover:bg-accent-fill/85'
+                    ? 'bg-cta text-white hover:bg-cta-hover'
                     : 'bg-panel text-ink-faint cursor-not-allowed'
                 }`}
               >

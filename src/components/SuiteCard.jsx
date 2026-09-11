@@ -66,9 +66,9 @@ export default function SuiteCard({ suite, status, nights }) {
         <button
           onClick={() => navigate(`/suite/${suite.id}`)}
           disabled={!status.ok}
-          className={`w-full py-3 rounded-control font-semibold tracking-wider uppercase text-sm flex items-center justify-center gap-2 transition-colors ${
+          className={`w-full py-3 rounded-control font-bold tracking-wider uppercase text-sm flex items-center justify-center gap-2 transition-colors ${
             status.ok
-              ? 'bg-accent-fill text-ink hover:bg-accent-fill/85'
+              ? 'bg-cta text-white hover:bg-cta-hover'
               : 'bg-panel text-ink-faint cursor-not-allowed'
           }`}
         >

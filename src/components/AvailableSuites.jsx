@@ -38,7 +38,7 @@ export default function AvailableSuites() {
             </p>
             <Link
               to="/suites"
-              className="inline-flex items-center gap-2 bg-accent-fill text-ink px-6 py-3 rounded-control font-semibold tracking-widest uppercase text-sm hover:bg-accent-fill/85 transition-colors"
+              className="inline-flex items-center gap-2 bg-cta text-white px-6 py-3 rounded-control font-bold tracking-widest uppercase text-sm hover:bg-cta-hover transition-colors"
             >
               See all suites <ArrowRight className="w-4 h-4" />
             </Link>

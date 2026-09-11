@@ -25,7 +25,15 @@ export default {
                                    // the darkest ground it lands on: 4.51:1 there,
                                    // 4.92:1 on surface, 5.25:1 on panel.
         'accent-fill': '#c0a062',  // brass for BUTTON FILLS, ink on it = 6.21:1
-        clay: '#9e5b33',           // terracotta, 4.50:1 on surface-sunk
+        clay: '#9e5b33',           // terracotta for TEXT, 4.50:1 on surface-sunk
+
+        // Filled buttons. White on the brass fill is only 3.58:1, so carrying
+        // white text means a darker, heavier fill — which is also what gives
+        // the button its weight. Terracotta rather than brass: brass stays the
+        // metal for rules, labels and outlines, and this keeps the two apart.
+        cta: '#a25d35',            // white on it = 5.06:1, 4.73:1 against cream
+        'cta-hover': '#8a4e2c',    // darkens on hover; an alpha fade would
+                                   // lighten it, since cream shows through
 
         // Photo-backed bands — hero, hosts, footer — keep light text over a
         // dark scrim, because cream text on a photograph cannot be made legible.

@@ -79,7 +79,7 @@ export default function Hero() {
 
             <button
               onClick={goToSuites}
-              className="flex items-center justify-center gap-2 bg-accent-fill text-ink px-8 py-4 rounded-control font-semibold tracking-widest uppercase hover:bg-accent-fill/85 transition-colors"
+              className="flex items-center justify-center gap-2 bg-cta text-white px-8 py-4 rounded-control font-bold tracking-widest uppercase hover:bg-cta-hover transition-colors"
             >
               <Search className="w-4 h-4" />
               Search
