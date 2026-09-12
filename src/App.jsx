@@ -3,6 +3,7 @@ import { BookingProvider } from './context/BookingProvider';
 import Navbar from './components/Navbar';
 import ScrollManager from './components/ScrollManager';
 import { useSiteMotion, usePageIn } from './lib/motion';
+import { useSmoothScroll } from './lib/lenis';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import SuiteDetails from './pages/SuiteDetails';
@@ -10,6 +11,7 @@ import Suites from './pages/Suites';
 import Reserve from './pages/Reserve';
 
 function App() {
+  useSmoothScroll();
 
   return (
     <BookingProvider>

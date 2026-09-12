@@ -9,19 +9,27 @@ import { currency } from '../lib/format';
 import HostCard from '../components/HostCard';
 import SuiteNotFound from '../components/SuiteNotFound';
 import Plate from '../components/Plate';
+import { getLenis } from '../lib/lenis';
 
 export default function SuiteDetails() {
   const { id } = useParams();
   const [lightbox, setLightbox] = useState(null);
 
+  // Lenis drives scrollTop itself and ignores a body overflow lock, so it has
+  // to be stopped explicitly. The overflow lock stays as the fallback for when
+  // smooth scrolling is off under prefers-reduced-motion.
   useEffect(() => {
+    const lenis = getLenis();
     if (lightbox) {
       document.body.style.overflow = 'hidden';
+      lenis?.stop();
     } else {
       document.body.style.overflow = '';
+      lenis?.start();
     }
     return () => {
       document.body.style.overflow = '';
+      lenis?.start();
     };
   }, [lightbox]);
   const suite = suites.find((s) => s.id === id);
