@@ -1,4 +1,5 @@
 import { BadgeCheck, MessageCircle } from 'lucide-react';
+import Plate from './Plate';
 
 /**
  * The differentiator in one component: the host is not a management company,
@@ -14,7 +15,7 @@ export default function HostCard({ host, suiteFloor, variant = 'inline' }) {
   if (variant === 'inline') {
     return (
       <div className="flex items-center gap-3">
-        <Monogram initials={host.initials} size="sm" />
+        <Avatar host={host} size="sm" />
         <div className="min-w-0">
           <p className="text-sm text-ink truncate flex items-center gap-1.5">
             {host.name}
@@ -30,7 +31,7 @@ export default function HostCard({ host, suiteFloor, variant = 'inline' }) {
 
   return (
     <div className="bg-panel backdrop-blur-sm border border-line rounded-card p-6 flex gap-5">
-      <Monogram initials={host.initials} size="lg" />
+      <Avatar host={host} size="lg" />
       <div className="space-y-2">
         <div>
           <p className="text-lg text-ink flex items-center gap-2 font-display">
@@ -51,14 +52,30 @@ export default function HostCard({ host, suiteFloor, variant = 'inline' }) {
   );
 }
 
-function Monogram({ initials, size }) {
+/**
+ * A portrait where one exists, the monogram otherwise — a host added without a
+ * photograph still renders rather than leaving a hole.
+ *
+ * The image is decorative: the host's name sits beside it in text, so alt=""
+ * stops a screen reader announcing the same person twice.
+ */
+function Avatar({ host, size }) {
   const dims = size === 'lg' ? 'w-16 h-16 text-lg' : 'w-9 h-9 text-xs';
+  const ring = 'shrink-0 rounded-full border border-accent/40 overflow-hidden';
+
+  if (host.photo) {
+    return (
+      <span className={`${dims} ${ring} block`}>
+        <Plate src={host.photo} alt="" className="w-full h-full object-cover" />
+      </span>
+    );
+  }
   return (
     <span
       aria-hidden
-      className={`${dims} shrink-0 rounded-full border border-accent/50 bg-accent-fill/20 text-accent font-display tracking-wider flex items-center justify-center`}
+      className={`${dims} ${ring} bg-accent-fill/20 text-accent font-display tracking-wider flex items-center justify-center`}
     >
-      {initials}
+      {host.initials}
     </span>
   );
 }

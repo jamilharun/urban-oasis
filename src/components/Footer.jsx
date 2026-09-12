@@ -55,7 +55,16 @@ export default function Footer() {
         </div>
         
         <div className="pt-8 border-t border-white/10 text-center md:text-left text-gray-400 text-sm flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; {new Date().getFullYear()} Urban Oasis. A UX concept, not a real property.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Urban Oasis. A UX concept, not a real property.{' '}
+            <a
+              href="https://www.pexels.com"
+              className="hover:text-accent-fill transition-colors underline underline-offset-2"
+            >
+              Host portraits from Pexels
+            </a>
+            .
+          </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

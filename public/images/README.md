@@ -78,3 +78,20 @@ do not depict. In rough order of how wrong it looks:
 "LUMA", "THE TERRACE" — and `people/founder`'s blueprint reads "AURORA TOWER".
 Both need regenerating with no text in frame. The footer crops `object-top`
 specifically to keep that signage out of shot.
+
+## Credits
+
+Host portraits are stock photography from [Pexels](https://www.pexels.com),
+standing in until real ones exist. The Pexels licence does not require
+attribution, but the photographers get it anyway; the same rows live on each
+host in `src/data/building.js` as a `credit` field.
+
+| plate | photographer | |
+|---|---|---|
+| `people/mara` | [Helena Lopes](https://www.pexels.com/@helenalopes) | [source](https://www.pexels.com/photo/smiling-woman-in-a-business-suit-27086761/) |
+| `people/tobias` | [Murat IŞIK](https://www.pexels.com/@bymuratisikofficial) | [source](https://www.pexels.com/photo/portrait-of-smiling-man-19933637/) |
+| `people/ines` | [Korede Adenola](https://www.pexels.com/@oluwakoreimage) | [source](https://www.pexels.com/photo/portrait-of-a-woman-smiling-16152597/) |
+| `people/sterling` | [Moe Magners](https://www.pexels.com/@moe-magners) | [source](https://www.pexels.com/photo/woman-in-red-blazer-wearing-black-framed-eyeglasses-5333757/) |
+
+Every other plate is generated. `building/hero` and `people/founder` still
+carry other brands in frame — see the defect note above.

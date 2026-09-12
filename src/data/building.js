@@ -9,6 +9,8 @@ import { offsetDays, nightsBetween } from '../lib/format';
 
 export const hosts = {
   mara: {
+    photo: '/images/people/mara',
+    credit: { by: "Helena Lopes", at: "https://www.pexels.com/@helenalopes", photo: "https://www.pexels.com/photo/smiling-woman-in-a-business-suit-27086761/" },
     name: 'Mara Villaluz',
     initials: 'MV',
     floor: 27,
@@ -17,6 +19,8 @@ export const hosts = {
     responds: 'within an hour',
   },
   tobias: {
+    photo: '/images/people/tobias',
+    credit: { by: "Murat IŞIK", at: "https://www.pexels.com/@bymuratisikofficial", photo: "https://www.pexels.com/photo/portrait-of-smiling-man-19933637/" },
     name: 'Tobias Renner',
     initials: 'TR',
     floor: 14,
@@ -25,6 +29,8 @@ export const hosts = {
     responds: 'within 2 hours',
   },
   ines: {
+    photo: '/images/people/ines',
+    credit: { by: "Korede Adenola", at: "https://www.pexels.com/@oluwakoreimage", photo: "https://www.pexels.com/photo/portrait-of-a-woman-smiling-16152597/" },
     name: 'Inés Okonkwo',
     initials: 'IO',
     floor: 9,
@@ -33,6 +39,8 @@ export const hosts = {
     responds: 'within 30 minutes',
   },
   sterling: {
+    photo: '/images/people/sterling',
+    credit: { by: "Moe Magners", at: "https://www.pexels.com/@moe-magners", photo: "https://www.pexels.com/photo/woman-in-red-blazer-wearing-black-framed-eyeglasses-5333757/" },
     name: 'The Sterling Trust',
     initials: 'ST',
     floor: 31,
